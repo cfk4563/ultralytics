@@ -49,11 +49,18 @@ from ultralytics.nn.modules import (
     Segment,
     Silence,
     WorldDetect,
+    SPPFCSPC,
+    SPPCSPC,
+    SPPCSPC_group,
 )
 from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, colorstr, emojis, yaml_load
 from ultralytics.utils.checks import check_requirements, check_suffix, check_yaml
 from ultralytics.utils.loss import v8ClassificationLoss, v8DetectionLoss, v8OBBLoss, v8PoseLoss, v8SegmentationLoss
 from ultralytics.utils.plotting import feature_visualization
+
+# 添加注意力
+from ultralytics.nn.modules.attention import LSKA,LSKblock
+
 from ultralytics.utils.torch_utils import (
     fuse_conv_and_bn,
     fuse_deconv_and_bn,
@@ -885,6 +892,9 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             DWConvTranspose2d,
             C3x,
             RepC3,
+            SPPFCSPC,
+            SPPCSPC,
+            SPPCSPC_group,
         }:
             c1, c2 = ch[f], args[0]
             if c2 != nc:  # if c2 not equal to number of classes (i.e. for Classify() output)
@@ -919,6 +929,11 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
                 args[2] = make_divisible(min(args[2], max_channels) * width, 8)
         elif m is RTDETRDecoder:  # special case, channels arg must be passed in index 1
             args.insert(1, [ch[x] for x in f])
+
+        # 2024年5月30日添加LSKA模块
+        elif m in {LSKA}:
+            args = [ch[f], *args]
+
         elif m is CBLinear:
             c2 = args[0]
             c1 = ch[f]
