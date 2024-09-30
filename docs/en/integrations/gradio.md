@@ -4,7 +4,7 @@ description: Discover an interactive way to perform object detection with Ultral
 keywords: Ultralytics, YOLOv8, Gradio, object detection, interactive, real-time, image processing, AI
 ---
 
-# Interactive Object Detection: Gradio & Ultralytics YOLOv8 🚀
+# Interactive [Object Detection](https://www.ultralytics.com/glossary/object-detection): Gradio & Ultralytics YOLOv8 🚀
 
 ## Introduction to Interactive Object Detection
 
@@ -28,7 +28,7 @@ This Gradio interface provides an easy and interactive way to perform object det
 - **Broad Accessibility:** The Gradio web interface can be accessed by anyone, making it an excellent tool for demonstrations, educational purposes, and quick experiments.
 
 <p align="center">
-   <img width="800" alt="Gradio example screenshot" src="https://github.com/RizwanMunawar/ultralytics/assets/26833433/52ee3cd2-ac59-4c27-9084-0fd05c6c33be">
+   <img width="800" alt="Gradio example screenshot" src="https://github.com/ultralytics/docs/releases/download/0/gradio-example-screenshot.avif">
 </p>
 
 ## How to Install the Gradio
@@ -174,11 +174,11 @@ For more details, you can read this [blog post](https://www.ultralytics.com/blog
 
 ### Can I use Gradio and Ultralytics YOLOv8 together for educational purposes?
 
-Yes, Gradio and Ultralytics YOLOv8 can be utilized together for educational purposes effectively. Gradio's intuitive web interface makes it easy for students and educators to interact with state-of-the-art deep learning models like Ultralytics YOLOv8 without needing advanced programming skills. This setup is ideal for demonstrating key concepts in object detection and computer vision, as Gradio provides immediate visual feedback which helps in understanding the impact of different parameters on the detection performance.
+Yes, Gradio and Ultralytics YOLOv8 can be utilized together for educational purposes effectively. Gradio's intuitive web interface makes it easy for students and educators to interact with state-of-the-art [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) models like Ultralytics YOLOv8 without needing advanced programming skills. This setup is ideal for demonstrating key concepts in object detection and [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv), as Gradio provides immediate visual feedback which helps in understanding the impact of different parameters on the detection performance.
 
 ### How do I adjust the confidence and IoU thresholds in the Gradio interface for YOLOv8?
 
-In the Gradio interface for YOLOv8, you can adjust the confidence and IoU thresholds using the sliders provided. These thresholds help control the prediction accuracy and object separation:
+In the Gradio interface for YOLOv8, you can adjust the confidence and IoU thresholds using the sliders provided. These thresholds help control the prediction [accuracy](https://www.ultralytics.com/glossary/accuracy) and object separation:
 
 - **Confidence Threshold:** Determines the minimum confidence level for detecting objects. Slide to increase or decrease the confidence required.
 - **IoU Threshold:** Sets the intersection-over-union threshold for distinguishing between overlapping objects. Adjust this value to refine object separation.

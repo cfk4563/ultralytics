@@ -6,13 +6,13 @@ keywords: YOLOv8, Google Colab, machine learning, deep learning, model training,
 
 # Accelerating YOLOv8 Projects with Google Colab
 
-Many developers lack the powerful computing resources needed to build deep learning models. Acquiring high-end hardware or renting a decent GPU can be expensive. Google Colab is a great solution to this. It's a browser-based platform that allows you to work with large datasets, develop complex models, and share your work with others without a huge cost.
+Many developers lack the powerful computing resources needed to build [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) models. Acquiring high-end hardware or renting a decent GPU can be expensive. Google Colab is a great solution to this. It's a browser-based platform that allows you to work with large datasets, develop complex models, and share your work with others without a huge cost.
 
 You can use Google Colab to work on projects related to [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) models. Google Colab's user-friendly environment is well suited for efficient model development and experimentation. Let's learn more about Google Colab, its key features, and how you can use it to train YOLOv8 models.
 
 ## Google Colaboratory
 
-Google Colaboratory, commonly known as Google Colab, was developed by Google Research in 2017. It is a free online cloud-based Jupyter Notebook environment that allows you to train your machine learning and deep learning models on CPUs, GPUs, and TPUs. The motivation behind developing Google Colab was Google's broader goals to advance AI technology and educational tools, and encourage the use of cloud services.
+Google Colaboratory, commonly known as Google Colab, was developed by Google Research in 2017. It is a free online cloud-based Jupyter Notebook environment that allows you to train your [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) and deep learning models on CPUs, GPUs, and TPUs. The motivation behind developing Google Colab was Google's broader goals to advance AI technology and educational tools, and encourage the use of cloud services.
 
 You can use Google Colab regardless of the specifications and configurations of your local computer. All you need is a Google account and a web browser, and you're good to go.
 
@@ -22,7 +22,7 @@ Training YOLOv8 models on Google Colab is pretty straightforward. Thanks to the 
 
 Sign in to your Google account and run the notebook's cells to train your model.
 
-![Training YOLOv8 Using Google Colab](https://github.com/ultralytics/ultralytics/assets/25847604/71779530-619e-4518-aced-5d56e1e8eab3)
+![Training YOLOv8 Using Google Colab](https://github.com/ultralytics/docs/releases/download/0/training-yolov8-using-google-colab.avif)
 
 Learn how to train a YOLOv8 model with custom data on YouTube with Nicolai. Check out the guide below.
 
@@ -67,7 +67,7 @@ Now, let's look at some of the standout features that make Google Colab a go-to 
 
 - **Hardware Resources:** Users also switch between different hardware options by modifying the runtime settings as shown below. Google Colab provides access to advanced hardware like Tesla K80 GPUs and TPUs, which are specialized circuits designed specifically for machine learning tasks.
 
-![Runtime Settings](https://github.com/ultralytics/ultralytics/assets/25847604/89a71a81-2784-4182-ad53-f024807d1dcc)
+![Runtime Settings](https://github.com/ultralytics/docs/releases/download/0/runtime-settings.avif)
 
 - **Collaboration:** Google Colab makes collaborating and working with other developers easy. You can easily share your notebooks with others and perform edits in real-time.
 

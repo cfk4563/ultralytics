@@ -4,7 +4,7 @@ description: Transform complex data into insightful heatmaps using Ultralytics Y
 keywords: Ultralytics, YOLOv8, heatmaps, data visualization, data analysis, complex data, patterns, trends, anomalies
 ---
 
-# Advanced Data Visualization: Heatmaps using Ultralytics YOLOv8 🚀
+# Advanced [Data Visualization](https://www.ultralytics.com/glossary/data-visualization): Heatmaps using Ultralytics YOLOv8 🚀
 
 ## Introduction to Heatmaps
 
@@ -29,17 +29,17 @@ A heatmap generated with [Ultralytics YOLOv8](https://github.com/ultralytics/ult
 
 ## Real World Applications
 
-|                                                                 Transportation                                                                  |                                                                 Retail                                                                  |
-| :---------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------: |
-| ![Ultralytics YOLOv8 Transportation Heatmap](https://github.com/RizwanMunawar/ultralytics/assets/62513924/288d7053-622b-4452-b4e4-1f41aeb764aa) | ![Ultralytics YOLOv8 Retail Heatmap](https://github.com/RizwanMunawar/ultralytics/assets/62513924/edef75ad-50a7-4c0a-be4a-a66cdfc12802) |
-|                                                    Ultralytics YOLOv8 Transportation Heatmap                                                    |                                                    Ultralytics YOLOv8 Retail Heatmap                                                    |
+|                                                                    Transportation                                                                    |                                                                Retail                                                                |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------: |
+| ![Ultralytics YOLOv8 Transportation Heatmap](https://github.com/ultralytics/docs/releases/download/0/ultralytics-yolov8-transportation-heatmap.avif) | ![Ultralytics YOLOv8 Retail Heatmap](https://github.com/ultralytics/docs/releases/download/0/ultralytics-yolov8-retail-heatmap.avif) |
+|                                                      Ultralytics YOLOv8 Transportation Heatmap                                                       |                                                  Ultralytics YOLOv8 Retail Heatmap                                                   |
 
 !!! tip "Heatmap Configuration"
 
     - `heatmap_alpha`: Ensure this value is within the range (0.0 - 1.0).
     - `decay_factor`: Used for removing heatmap after an object is no longer in the frame, its value should also be in the range (0.0 - 1.0).
 
-!!! Example "Heatmaps using Ultralytics YOLOv8 Example"
+!!! example "Heatmaps using Ultralytics YOLOv8 Example"
 
     === "Heatmap"
 
@@ -293,14 +293,7 @@ A heatmap generated with [Ultralytics YOLOv8](https://github.com/ultralytics/ult
 
 ### Arguments `model.track`
 
-| Name      | Type    | Default        | Description                                                 |
-| --------- | ------- | -------------- | ----------------------------------------------------------- |
-| `source`  | `im0`   | `None`         | source directory for images or videos                       |
-| `persist` | `bool`  | `False`        | persisting tracks between frames                            |
-| `tracker` | `str`   | `botsort.yaml` | Tracking method 'bytetrack' or 'botsort'                    |
-| `conf`    | `float` | `0.3`          | Confidence Threshold                                        |
-| `iou`     | `float` | `0.5`          | IOU Threshold                                               |
-| `classes` | `list`  | `None`         | filter results by class, i.e. classes=0, or classes=[0,2,3] |
+{% include "macros/track-args.md" %}
 
 ### Heatmap COLORMAPs
 
@@ -366,9 +359,9 @@ cv2.destroyAllWindows()
 
 For further guidance, check the [Tracking Mode](../modes/track.md) page.
 
-### What makes Ultralytics YOLOv8 heatmaps different from other data visualization tools like those from OpenCV or Matplotlib?
+### What makes Ultralytics YOLOv8 heatmaps different from other data visualization tools like those from [OpenCV](https://www.ultralytics.com/glossary/opencv) or Matplotlib?
 
-Ultralytics YOLOv8 heatmaps are specifically designed for integration with its object detection and tracking models, providing an end-to-end solution for real-time data analysis. Unlike generic visualization tools like OpenCV or Matplotlib, YOLOv8 heatmaps are optimized for performance and automated processing, supporting features like persistent tracking, decay factor adjustment, and real-time video overlay. For more information on YOLOv8's unique features, visit the [Ultralytics YOLOv8 Introduction](https://www.ultralytics.com/blog/introducing-ultralytics-yolov8).
+Ultralytics YOLOv8 heatmaps are specifically designed for integration with its [object detection](https://www.ultralytics.com/glossary/object-detection) and tracking models, providing an end-to-end solution for real-time data analysis. Unlike generic visualization tools like OpenCV or Matplotlib, YOLOv8 heatmaps are optimized for performance and automated processing, supporting features like persistent tracking, decay factor adjustment, and real-time video overlay. For more information on YOLOv8's unique features, visit the [Ultralytics YOLOv8 Introduction](https://www.ultralytics.com/blog/introducing-ultralytics-yolov8).
 
 ### How can I visualize only specific object classes in heatmaps using Ultralytics YOLOv8?
 
@@ -400,4 +393,4 @@ cv2.destroyAllWindows()
 
 ### Why should businesses choose Ultralytics YOLOv8 for heatmap generation in data analysis?
 
-Ultralytics YOLOv8 offers seamless integration of advanced object detection and real-time heatmap generation, making it an ideal choice for businesses looking to visualize data more effectively. The key advantages include intuitive data distribution visualization, efficient pattern detection, and enhanced spatial analysis for better decision-making. Additionally, YOLOv8's cutting-edge features such as persistent tracking, customizable colormaps, and support for various export formats make it superior to other tools like TensorFlow and OpenCV for comprehensive data analysis. Learn more about business applications at [Ultralytics Plans](https://www.ultralytics.com/plans).
+Ultralytics YOLOv8 offers seamless integration of advanced object detection and real-time heatmap generation, making it an ideal choice for businesses looking to visualize data more effectively. The key advantages include intuitive data distribution visualization, efficient pattern detection, and enhanced spatial analysis for better decision-making. Additionally, YOLOv8's cutting-edge features such as persistent tracking, customizable colormaps, and support for various export formats make it superior to other tools like [TensorFlow](https://www.ultralytics.com/glossary/tensorflow) and OpenCV for comprehensive data analysis. Learn more about business applications at [Ultralytics Plans](https://www.ultralytics.com/plans).

@@ -6,12 +6,12 @@ keywords: YOLOv8, Security Alarm System, real-time object detection, Ultralytics
 
 # Security Alarm System Project Using Ultralytics YOLOv8
 
-<img src="https://github.com/RizwanMunawar/ultralytics/assets/62513924/f4e4a613-fb25-4bd0-9ec5-78352ddb62bd" alt="Security Alarm System">
+<img src="https://github.com/ultralytics/docs/releases/download/0/security-alarm-system-ultralytics-yolov8.avif" alt="Security Alarm System">
 
-The Security Alarm System Project utilizing Ultralytics YOLOv8 integrates advanced computer vision capabilities to enhance security measures. YOLOv8, developed by Ultralytics, provides real-time object detection, allowing the system to identify and respond to potential security threats promptly. This project offers several advantages:
+The Security Alarm System Project utilizing Ultralytics YOLOv8 integrates advanced [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) capabilities to enhance security measures. YOLOv8, developed by Ultralytics, provides real-time object detection, allowing the system to identify and respond to potential security threats promptly. This project offers several advantages:
 
 - **Real-time Detection:** YOLOv8's efficiency enables the Security Alarm System to detect and respond to security incidents in real-time, minimizing response time.
-- **Accuracy:** YOLOv8 is known for its accuracy in object detection, reducing false positives and enhancing the reliability of the security alarm system.
+- **[Accuracy](https://www.ultralytics.com/glossary/accuracy):** YOLOv8 is known for its accuracy in object detection, reducing false positives and enhancing the reliability of the security alarm system.
 - **Integration Capabilities:** The project can be seamlessly integrated with existing security infrastructure, providing an upgraded layer of intelligent surveillance.
 
 <p align="center">
@@ -22,14 +22,14 @@ The Security Alarm System Project utilizing Ultralytics YOLOv8 integrates advanc
     allowfullscreen>
   </iframe>
   <br>
-  <strong>Watch:</strong> Security Alarm System Project with Ultralytics YOLOv8 Object Detection
+  <strong>Watch:</strong> Security Alarm System Project with Ultralytics YOLOv8 [Object Detection](https://www.ultralytics.com/glossary/object-detection)
 </p>
 
 ### Code
 
 #### Set up the parameters of the message
 
-???+ tip "Note"
+???+ note
 
     App Password Generation is necessary
 
@@ -175,7 +175,7 @@ That's it! When you execute the code, you'll receive a single notification on yo
 
 #### Email Received Sample
 
-<img width="256" src="https://github.com/RizwanMunawar/ultralytics/assets/62513924/db79ccc6-aabd-4566-a825-b34e679c90f9" alt="Email Received Sample">
+<img width="256" src="https://github.com/ultralytics/docs/releases/download/0/email-received-sample.avif" alt="Email Received Sample">
 
 ## FAQ
 
@@ -193,8 +193,8 @@ Running Ultralytics YOLOv8 on a standard setup typically requires around 5GB of 
 
 ### What makes Ultralytics YOLOv8 different from other object detection models like Faster R-CNN or SSD?
 
-Ultralytics YOLOv8 provides an edge over models like Faster R-CNN or SSD with its real-time detection capabilities and higher accuracy. Its unique architecture allows it to process images much faster without compromising on precision, making it ideal for time-sensitive applications like security alarm systems. For a comprehensive comparison of object detection models, you can explore our [guide](https://docs.ultralytics.com/models).
+Ultralytics YOLOv8 provides an edge over models like Faster R-CNN or SSD with its real-time detection capabilities and higher accuracy. Its unique architecture allows it to process images much faster without compromising on [precision](https://www.ultralytics.com/glossary/precision), making it ideal for time-sensitive applications like security alarm systems. For a comprehensive comparison of object detection models, you can explore our [guide](https://docs.ultralytics.com/models/).
 
 ### How can I reduce the frequency of false positives in my security system using Ultralytics YOLOv8?
 
-To reduce false positives, ensure your Ultralytics YOLOv8 model is adequately trained with a diverse and well-annotated dataset. Fine-tuning hyperparameters and regularly updating the model with new data can significantly improve detection accuracy. Detailed hyperparameter tuning techniques can be found in our [hyperparameter tuning guide](../guides/hyperparameter-tuning.md).
+To reduce false positives, ensure your Ultralytics YOLOv8 model is adequately trained with a diverse and well-annotated dataset. Fine-tuning hyperparameters and regularly updating the model with new data can significantly improve detection accuracy. Detailed [hyperparameter tuning](https://www.ultralytics.com/glossary/hyperparameter-tuning) techniques can be found in our [hyperparameter tuning guide](../guides/hyperparameter-tuning.md).

@@ -1,5 +1,6 @@
 # Ultralytics YOLO 🚀, AGPL-3.0 license
 
+import contextlib
 import gc
 import math
 import os
@@ -24,6 +25,7 @@ from ultralytics.utils import (
     NUM_THREADS,
     PYTHON_VERSION,
     TORCHVISION_VERSION,
+    WINDOWS,
     __version__,
     colorstr,
 )
@@ -38,21 +40,28 @@ except ImportError:
 TORCH_1_9 = check_version(torch.__version__, "1.9.0")
 TORCH_1_13 = check_version(torch.__version__, "1.13.0")
 TORCH_2_0 = check_version(torch.__version__, "2.0.0")
+TORCH_2_4 = check_version(torch.__version__, "2.4.0")
 TORCHVISION_0_10 = check_version(TORCHVISION_VERSION, "0.10.0")
 TORCHVISION_0_11 = check_version(TORCHVISION_VERSION, "0.11.0")
 TORCHVISION_0_13 = check_version(TORCHVISION_VERSION, "0.13.0")
 TORCHVISION_0_18 = check_version(TORCHVISION_VERSION, "0.18.0")
+if WINDOWS and check_version(torch.__version__, "==2.4.0"):  # reject version 2.4.0 on Windows
+    LOGGER.warning(
+        "WARNING ⚠️ Known issue with torch==2.4.0 on Windows with CPU, recommend upgrading to torch>=2.4.1 to resolve "
+        "https://github.com/ultralytics/ultralytics/issues/15049"
+    )
 
 
 @contextmanager
 def torch_distributed_zero_first(local_rank: int):
     """Ensures all processes in distributed training wait for the local master (rank 0) to complete a task first."""
     initialized = dist.is_available() and dist.is_initialized()
+
     if initialized and local_rank not in {-1, 0}:
         dist.barrier(device_ids=[local_rank])
     yield
     if initialized and local_rank == 0:
-        dist.barrier(device_ids=[0])
+        dist.barrier(device_ids=[local_rank])
 
 
 def smart_inference_mode():
@@ -101,12 +110,17 @@ def autocast(enabled: bool, device: str = "cuda"):
 
 def get_cpu_info():
     """Return a string with system CPU information, i.e. 'Apple M2'."""
-    import cpuinfo  # pip install py-cpuinfo
+    from ultralytics.utils import PERSISTENT_CACHE  # avoid circular import error
 
-    k = "brand_raw", "hardware_raw", "arch_string_raw"  # info keys sorted by preference (not all keys always available)
-    info = cpuinfo.get_cpu_info()  # info dict
-    string = info.get(k[0] if k[0] in info else k[1] if k[1] in info else k[2], "unknown")
-    return string.replace("(R)", "").replace("CPU ", "").replace("@ ", "")
+    if "cpu_info" not in PERSISTENT_CACHE:
+        with contextlib.suppress(Exception):
+            import cpuinfo  # pip install py-cpuinfo
+
+            k = "brand_raw", "hardware_raw", "arch_string_raw"  # keys sorted by preference
+            info = cpuinfo.get_cpu_info()  # info dict
+            string = info.get(k[0] if k[0] in info else k[1] if k[1] in info else k[2], "unknown")
+            PERSISTENT_CACHE["cpu_info"] = string.replace("(R)", "").replace("CPU ", "").replace("@ ", "")
+    return PERSISTENT_CACHE.get("cpu_info", "unknown")
 
 
 def select_device(device="", batch=0, newline=False, verbose=True):
@@ -133,20 +147,19 @@ def select_device(device="", batch=0, newline=False, verbose=True):
             devices when using multiple GPUs.
 
     Examples:
-        >>> select_device('cuda:0')
+        >>> select_device("cuda:0")
         device(type='cuda', index=0)
 
-        >>> select_device('cpu')
+        >>> select_device("cpu")
         device(type='cpu')
 
     Note:
         Sets the 'CUDA_VISIBLE_DEVICES' environment variable for specifying which GPUs to use.
     """
-
     if isinstance(device, torch.device):
         return device
 
-    s = f"Ultralytics YOLOv{__version__} 🚀 Python-{PYTHON_VERSION} torch-{torch.__version__} "
+    s = f"Ultralytics {__version__} 🚀 Python-{PYTHON_VERSION} torch-{torch.__version__} "
     device = str(device).lower()
     for remove in "cuda:", "none", "(", ")", "[", "]", "'", " ":
         device = device.replace(remove, "")  # to string, 'cuda:0' -> '0' and '(0, 1)' -> '0,1'
@@ -236,7 +249,7 @@ def fuse_conv_and_bn(conv, bn):
     )
 
     # Prepare filters
-    w_conv = conv.weight.clone().view(conv.out_channels, -1)
+    w_conv = conv.weight.view(conv.out_channels, -1)
     w_bn = torch.diag(bn.weight.div(torch.sqrt(bn.eps + bn.running_var)))
     fusedconv.weight.copy_(torch.mm(w_bn, w_conv).view(fusedconv.weight.shape))
 
@@ -267,7 +280,7 @@ def fuse_deconv_and_bn(deconv, bn):
     )
 
     # Prepare filters
-    w_deconv = deconv.weight.clone().view(deconv.out_channels, -1)
+    w_deconv = deconv.weight.view(deconv.out_channels, -1)
     w_bn = torch.diag(bn.weight.div(torch.sqrt(bn.eps + bn.running_var)))
     fuseddconv.weight.copy_(torch.mm(w_bn, w_deconv).view(fuseddconv.weight.shape))
 
@@ -327,11 +340,13 @@ def model_info_for_loggers(trainer):
     Example:
         YOLOv8n info for loggers
         ```python
-        results = {'model/parameters': 3151904,
-                   'model/GFLOPs': 8.746,
-                   'model/speed_ONNX(ms)': 41.244,
-                   'model/speed_TensorRT(ms)': 3.211,
-                   'model/speed_PyTorch(ms)': 18.755}
+        results = {
+            "model/parameters": 3151904,
+            "model/GFLOPs": 8.746,
+            "model/speed_ONNX(ms)": 41.244,
+            "model/speed_TensorRT(ms)": 3.211,
+            "model/speed_PyTorch(ms)": 18.755,
+        }
         ```
     """
     if trainer.args.profile:  # profile ONNX and TensorRT times
@@ -411,9 +426,7 @@ def initialize_weights(model):
 
 
 def scale_img(img, ratio=1.0, same_shape=False, gs=32):
-    """Scales and pads an image tensor of shape img(bs,3,y,x) based on given ratio and grid size gs, optionally
-    retaining the original shape.
-    """
+    """Scales and pads an image tensor, optionally maintaining aspect ratio and padding to gs multiple."""
     if ratio == 1.0:
         return img
     h, w = img.shape[2:]
@@ -422,13 +435,6 @@ def scale_img(img, ratio=1.0, same_shape=False, gs=32):
     if not same_shape:  # pad/crop img
         h, w = (math.ceil(x * ratio / gs) * gs for x in (h, w))
     return F.pad(img, [0, w - s[1], 0, h - s[0]], value=0.447)  # value = imagenet mean
-
-
-def make_divisible(x, divisor):
-    """Returns nearest x divisible by divisor."""
-    if isinstance(divisor, torch.Tensor):
-        divisor = int(divisor.max())  # to int
-    return math.ceil(x / divisor) * divisor
 
 
 def copy_attr(a, b, include=(), exclude=()):
@@ -494,7 +500,7 @@ def init_seeds(seed=0, deterministic=False):
 class ModelEMA:
     """
     Updated Exponential Moving Average (EMA) from https://github.com/rwightman/pytorch-image-models. Keeps a moving
-    average of everything in the model state_dict (parameters and buffers)
+    average of everything in the model state_dict (parameters and buffers).
 
     For EMA details see https://www.tensorflow.org/api_docs/python/tf/train/ExponentialMovingAverage
 
@@ -529,23 +535,24 @@ class ModelEMA:
             copy_attr(self.ema, model, include, exclude)
 
 
-def strip_optimizer(f: Union[str, Path] = "best.pt", s: str = "") -> None:
+def strip_optimizer(f: Union[str, Path] = "best.pt", s: str = "", updates: dict = None) -> dict:
     """
     Strip optimizer from 'f' to finalize training, optionally save as 's'.
 
     Args:
         f (str): file path to model to strip the optimizer from. Default is 'best.pt'.
         s (str): file path to save the model with stripped optimizer to. If not provided, 'f' will be overwritten.
+        updates (dict): a dictionary of updates to overlay onto the checkpoint before saving.
 
     Returns:
-        None
+        (dict): The combined checkpoint dictionary.
 
     Example:
         ```python
         from pathlib import Path
         from ultralytics.utils.torch_utils import strip_optimizer
 
-        for f in Path('path/to/model/checkpoints').rglob('*.pt'):
+        for f in Path("path/to/model/checkpoints").rglob("*.pt"):
             strip_optimizer(f)
         ```
 
@@ -558,9 +565,9 @@ def strip_optimizer(f: Union[str, Path] = "best.pt", s: str = "") -> None:
         assert "model" in x, "'model' missing from checkpoint"
     except Exception as e:
         LOGGER.warning(f"WARNING ⚠️ Skipping {f}, not a valid Ultralytics model: {e}")
-        return
+        return {}
 
-    updates = {
+    metadata = {
         "date": datetime.now().isoformat(),
         "version": __version__,
         "license": "AGPL-3.0 License (https://ultralytics.com/license)",
@@ -587,9 +594,11 @@ def strip_optimizer(f: Union[str, Path] = "best.pt", s: str = "") -> None:
     # x['model'].args = x['train_args']
 
     # Save
-    torch.save({**updates, **x}, s or f, use_dill=False)  # combine dicts (prefer to the right)
+    combined = {**metadata, **x, **(updates or {})}
+    torch.save(combined, s or f, use_dill=False)  # combine dicts (prefer to the right)
     mb = os.path.getsize(s or f) / 1e6  # file size
     LOGGER.info(f"Optimizer stripped from {f},{f' saved as {s},' if s else ''} {mb:.1f}MB")
+    return combined
 
 
 def convert_optimizer_state_dict_to_fp16(state_dict):

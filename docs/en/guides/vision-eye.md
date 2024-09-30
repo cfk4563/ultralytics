@@ -8,16 +8,16 @@ keywords: VisionEye, YOLOv8, Ultralytics, object mapping, object tracking, dista
 
 ## What is VisionEye Object Mapping?
 
-[Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics/) VisionEye offers the capability for computers to identify and pinpoint objects, simulating the observational precision of the human eye. This functionality enables computers to discern and focus on specific objects, much like the way the human eye observes details from a particular viewpoint.
+[Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics/) VisionEye offers the capability for computers to identify and pinpoint objects, simulating the observational [precision](https://www.ultralytics.com/glossary/precision) of the human eye. This functionality enables computers to discern and focus on specific objects, much like the way the human eye observes details from a particular viewpoint.
 
 ## Samples
 
-|                                                                        VisionEye View                                                                        |                                                                        VisionEye View With Object Tracking                                                                        |                                                                 VisionEye View With Distance Calculation                                                                  |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![VisionEye View Object Mapping using Ultralytics YOLOv8](https://github.com/RizwanMunawar/ultralytics/assets/62513924/7d593acc-2e37-41b0-ad0e-92b4ffae6647) | ![VisionEye View Object Mapping with Object Tracking using Ultralytics YOLOv8](https://github.com/RizwanMunawar/ultralytics/assets/62513924/fcd85952-390f-451e-8fb0-b82e943af89c) | ![VisionEye View with Distance Calculation using Ultralytics YOLOv8](https://github.com/RizwanMunawar/RizwanMunawar/assets/62513924/18c4dafe-a22e-4fa9-a7d4-2bb293562a95) |
-|                                                    VisionEye View Object Mapping using Ultralytics YOLOv8                                                    |                                                    VisionEye View Object Mapping with Object Tracking using Ultralytics YOLOv8                                                    |                                                     VisionEye View with Distance Calculation using Ultralytics YOLOv8                                                     |
+|                                                                        VisionEye View                                                                        |                                                                         VisionEye View With Object Tracking                                                                         |                                                                 VisionEye View With Distance Calculation                                                                 |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| ![VisionEye View Object Mapping using Ultralytics YOLOv8](https://github.com/ultralytics/docs/releases/download/0/visioneye-view-object-mapping-yolov8.avif) | ![VisionEye View Object Mapping with Object Tracking using Ultralytics YOLOv8](https://github.com/ultralytics/docs/releases/download/0/visioneye-object-mapping-with-tracking.avif) | ![VisionEye View with Distance Calculation using Ultralytics YOLOv8](https://github.com/ultralytics/docs/releases/download/0/visioneye-distance-calculation-yolov8.avif) |
+|                                                    VisionEye View Object Mapping using Ultralytics YOLOv8                                                    |                                                     VisionEye View Object Mapping with Object Tracking using Ultralytics YOLOv8                                                     |                                                    VisionEye View with Distance Calculation using Ultralytics YOLOv8                                                     |
 
-!!! Example "VisionEye Object Mapping using YOLOv8"
+!!! example "VisionEye Object Mapping using YOLOv8"
 
     === "VisionEye Object Mapping"
 
@@ -182,7 +182,7 @@ For any inquiries, feel free to post your questions in the [Ultralytics Issue Se
 
 ### How do I start using VisionEye Object Mapping with Ultralytics YOLOv8?
 
-To start using VisionEye Object Mapping with Ultralytics YOLOv8, first, you'll need to install the Ultralytics YOLO package via pip. Then, you can use the sample code provided in the documentation to set up object detection with VisionEye. Here's a simple example to get you started:
+To start using VisionEye Object Mapping with Ultralytics YOLOv8, first, you'll need to install the Ultralytics YOLO package via pip. Then, you can use the sample code provided in the documentation to set up [object detection](https://www.ultralytics.com/glossary/object-detection) with VisionEye. Here's a simple example to get you started:
 
 ```python
 import cv2
@@ -292,7 +292,7 @@ For detailed instructions, refer to the [VisionEye with Distance Calculation](#s
 
 ### Why should I use Ultralytics YOLOv8 for object mapping and tracking?
 
-Ultralytics YOLOv8 is renowned for its speed, accuracy, and ease of integration, making it a top choice for object mapping and tracking. Key advantages include:
+Ultralytics YOLOv8 is renowned for its speed, [accuracy](https://www.ultralytics.com/glossary/accuracy), and ease of integration, making it a top choice for object mapping and tracking. Key advantages include:
 
 1. **State-of-the-art Performance**: Delivers high accuracy in real-time object detection.
 2. **Flexibility**: Supports various tasks such as detection, tracking, and distance calculation.
@@ -301,7 +301,7 @@ Ultralytics YOLOv8 is renowned for its speed, accuracy, and ease of integration,
 
 For more information on applications and benefits, check out the [Ultralytics YOLOv8 documentation](https://docs.ultralytics.com/models/yolov8/).
 
-### How can I integrate VisionEye with other machine learning tools like Comet or ClearML?
+### How can I integrate VisionEye with other [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) tools like Comet or ClearML?
 
 Ultralytics YOLOv8 can integrate seamlessly with various machine learning tools like Comet and ClearML, enhancing experiment tracking, collaboration, and reproducibility. Follow the detailed guides on [how to use YOLOv5 with Comet](https://www.ultralytics.com/blog/how-to-use-yolov5-with-comet) and [integrate YOLOv8 with ClearML](https://docs.ultralytics.com/integrations/clearml/) to get started.
 

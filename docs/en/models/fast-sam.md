@@ -21,11 +21,11 @@ The Fast Segment Anything Model (FastSAM) is a novel, real-time CNN-based soluti
 
 ## Model Architecture
 
-![Fast Segment Anything Model (FastSAM) architecture overview](https://user-images.githubusercontent.com/26833433/248551984-d98f0f6d-7535-45d0-b380-2e1440b52ad7.jpg)
+![Fast Segment Anything Model (FastSAM) architecture overview](https://github.com/ultralytics/docs/releases/download/0/fastsam-architecture-overview.avif)
 
 ## Overview
 
-FastSAM is designed to address the limitations of the [Segment Anything Model (SAM)](sam.md), a heavy Transformer model with substantial computational resource requirements. The FastSAM decouples the segment anything task into two sequential stages: all-instance segmentation and prompt-guided selection. The first stage uses [YOLOv8-seg](../tasks/segment.md) to produce the segmentation masks of all instances in the image. In the second stage, it outputs the region-of-interest corresponding to the prompt.
+FastSAM is designed to address the limitations of the [Segment Anything Model (SAM)](sam.md), a heavy [Transformer](https://www.ultralytics.com/glossary/transformer) model with substantial computational resource requirements. The FastSAM decouples the segment anything task into two sequential stages: all-[instance segmentation](https://www.ultralytics.com/glossary/instance-segmentation) and prompt-guided selection. The first stage uses [YOLOv8-seg](../tasks/segment.md) to produce the segmentation masks of all instances in the image. In the second stage, it outputs the region-of-interest corresponding to the prompt.
 
 ## Key Features
 
@@ -58,15 +58,14 @@ The FastSAM models are easy to integrate into your Python applications. Ultralyt
 
 ### Predict Usage
 
-To perform object detection on an image, use the `predict` method as shown below:
+To perform [object detection](https://www.ultralytics.com/glossary/object-detection) on an image, use the `predict` method as shown below:
 
-!!! Example
+!!! example
 
     === "Python"
 
         ```python
         from ultralytics import FastSAM
-        from ultralytics.models.fastsam import FastSAMPrompt
 
         # Define an inference source
         source = "path/to/bus.jpg"
@@ -77,23 +76,17 @@ To perform object detection on an image, use the `predict` method as shown below
         # Run inference on an image
         everything_results = model(source, device="cpu", retina_masks=True, imgsz=1024, conf=0.4, iou=0.9)
 
-        # Prepare a Prompt Process object
-        prompt_process = FastSAMPrompt(source, everything_results, device="cpu")
+        # Run inference with bboxes prompt
+        results = model(source, bboxes=[439, 437, 524, 709])
 
-        # Everything prompt
-        results = prompt_process.everything_prompt()
+        # Run inference with points prompt
+        results = model(source, points=[[200, 200]], labels=[1])
 
-        # Bbox default shape [0,0,0,0] -> [x1,y1,x2,y2]
-        results = prompt_process.box_prompt(bbox=[200, 200, 300, 300])
+        # Run inference with texts prompt
+        results = model(source, texts="a photo of a dog")
 
-        # Text prompt
-        results = prompt_process.text_prompt(text="a photo of a dog")
-
-        # Point prompt
-        # points default [[0,0]] [[x1,y1],[x2,y2]]
-        # point_label default [0] [1,0] 0:background, 1:foreground
-        results = prompt_process.point_prompt(points=[[200, 200]], pointlabel=[1])
-        prompt_process.plot(annotations=results, output="./")
+        # Run inference with bboxes and points and texts prompt at the same time
+        results = model(source, bboxes=[439, 437, 524, 709], points=[[200, 200]], labels=[1], texts="a photo of a dog")
         ```
 
     === "CLI"
@@ -105,7 +98,29 @@ To perform object detection on an image, use the `predict` method as shown below
 
 This snippet demonstrates the simplicity of loading a pre-trained model and running a prediction on an image.
 
-!!! Note
+!!! example "FastSAMPredictor example"
+
+    This way you can run inference on image and get all the segment `results` once and run prompts inference multiple times without running inference multiple times.
+
+    === "Prompt inference"
+
+        ```python
+        from ultralytics.models.fastsam import FastSAMPredictor
+
+        # Create FastSAMPredictor
+        overrides = dict(conf=0.25, task="segment", mode="predict", model="FastSAM-s.pt", save=False, imgsz=1024)
+        predictor = FastSAMPredictor(overrides=overrides)
+
+        # Segment everything
+        everything_results = predictor("ultralytics/assets/bus.jpg")
+
+        # Prompt inference
+        bbox_results = predictor.prompt(everything_results, bboxes=[[200, 200, 300, 300]])
+        point_results = predictor.prompt(everything_results, points=[200, 200])
+        text_results = predictor.prompt(everything_results, texts="a photo of a dog")
+        ```
+
+!!! note
 
     All the returned `results` in above examples are [Results](../modes/predict.md#working-with-results) object which allows access predicted masks and source image easily.
 
@@ -113,7 +128,7 @@ This snippet demonstrates the simplicity of loading a pre-trained model and runn
 
 Validation of the model on a dataset can be done as follows:
 
-!!! Example
+!!! example
 
     === "Python"
 
@@ -140,7 +155,7 @@ Please note that FastSAM only supports detection and segmentation of a single cl
 
 To perform object tracking on an image, use the `track` method as shown below:
 
-!!! Example
+!!! example
 
     === "Python"
 
@@ -209,7 +224,7 @@ FastSAM is also available directly from the [https://github.com/CASIA-IVA-Lab/Fa
         python Inference.py --model_path ./weights/FastSAM.pt --img_path ./images/dogs.jpg --text_prompt "the yellow dog"
         ```
 
-    - Segment objects within a bounding box (provide box coordinates in xywh format):
+    - Segment objects within a [bounding box](https://www.ultralytics.com/glossary/bounding-box) (provide box coordinates in xywh format):
 
         ```shell
         python Inference.py --model_path ./weights/FastSAM.pt --img_path ./images/dogs.jpg --box_prompt "[570,200,230,400]"
@@ -226,7 +241,7 @@ Additionally, you can try FastSAM through a [Colab demo](https://colab.research.
 
 We would like to acknowledge the FastSAM authors for their significant contributions in the field of real-time instance segmentation:
 
-!!! Quote ""
+!!! quote ""
 
     === "BibTeX"
 
@@ -247,7 +262,7 @@ The original FastSAM paper can be found on [arXiv](https://arxiv.org/abs/2306.12
 
 ### What is FastSAM and how does it differ from SAM?
 
-FastSAM, short for Fast Segment Anything Model, is a real-time convolutional neural network (CNN)-based solution designed to reduce computational demands while maintaining high performance in object segmentation tasks. Unlike the Segment Anything Model (SAM), which uses a heavier Transformer-based architecture, FastSAM leverages [Ultralytics YOLOv8-seg](../tasks/segment.md) for efficient instance segmentation in two stages: all-instance segmentation followed by prompt-guided selection.
+FastSAM, short for Fast Segment Anything Model, is a real-time [convolutional neural network](https://www.ultralytics.com/glossary/convolutional-neural-network-cnn) (CNN)-based solution designed to reduce computational demands while maintaining high performance in object segmentation tasks. Unlike the Segment Anything Model (SAM), which uses a heavier Transformer-based architecture, FastSAM leverages [Ultralytics YOLOv8-seg](../tasks/segment.md) for efficient instance segmentation in two stages: all-instance segmentation followed by prompt-guided selection.
 
 ### How does FastSAM achieve real-time segmentation performance?
 
@@ -255,7 +270,7 @@ FastSAM achieves real-time segmentation by decoupling the segmentation task into
 
 ### What are the practical applications of FastSAM?
 
-FastSAM is practical for a variety of computer vision tasks that require real-time segmentation performance. Applications include:
+FastSAM is practical for a variety of [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) tasks that require real-time segmentation performance. Applications include:
 
 - Industrial automation for quality control and assurance
 - Real-time video analysis for security and surveillance
@@ -270,7 +285,6 @@ To use FastSAM for inference in Python, you can follow the example below:
 
 ```python
 from ultralytics import FastSAM
-from ultralytics.models.fastsam import FastSAMPrompt
 
 # Define an inference source
 source = "path/to/bus.jpg"
@@ -281,21 +295,17 @@ model = FastSAM("FastSAM-s.pt")  # or FastSAM-x.pt
 # Run inference on an image
 everything_results = model(source, device="cpu", retina_masks=True, imgsz=1024, conf=0.4, iou=0.9)
 
-# Prepare a Prompt Process object
-prompt_process = FastSAMPrompt(source, everything_results, device="cpu")
+# Run inference with bboxes prompt
+results = model(source, bboxes=[439, 437, 524, 709])
 
-# Everything prompt
-ann = prompt_process.everything_prompt()
+# Run inference with points prompt
+results = model(source, points=[[200, 200]], labels=[1])
 
-# Bounding box prompt
-ann = prompt_process.box_prompt(bbox=[200, 200, 300, 300])
+# Run inference with texts prompt
+results = model(source, texts="a photo of a dog")
 
-# Text prompt
-ann = prompt_process.text_prompt(text="a photo of a dog")
-
-# Point prompt
-ann = prompt_process.point_prompt(points=[[200, 200]], pointlabel=[1])
-prompt_process.plot(annotations=ann, output="./")
+# Run inference with bboxes and points and texts prompt at the same time
+results = model(source, bboxes=[439, 437, 524, 709], points=[[200, 200]], labels=[1], texts="a photo of a dog")
 ```
 
 For more details on inference methods, check the [Predict Usage](#predict-usage) section of the documentation.

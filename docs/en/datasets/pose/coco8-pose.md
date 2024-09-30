@@ -8,15 +8,15 @@ keywords: COCO8-Pose, Ultralytics, pose detection dataset, object detection, YOL
 
 ## Introduction
 
-[Ultralytics](https://ultralytics.com) COCO8-Pose is a small, but versatile pose detection dataset composed of the first 8 images of the COCO train 2017 set, 4 for training and 4 for validation. This dataset is ideal for testing and debugging object detection models, or for experimenting with new detection approaches. With 8 images, it is small enough to be easily manageable, yet diverse enough to test training pipelines for errors and act as a sanity check before training larger datasets.
+[Ultralytics](https://www.ultralytics.com/) COCO8-Pose is a small, but versatile pose detection dataset composed of the first 8 images of the COCO train 2017 set, 4 for training and 4 for validation. This dataset is ideal for testing and debugging [object detection](https://www.ultralytics.com/glossary/object-detection) models, or for experimenting with new detection approaches. With 8 images, it is small enough to be easily manageable, yet diverse enough to test training pipelines for errors and act as a sanity check before training larger datasets.
 
-This dataset is intended for use with Ultralytics [HUB](https://hub.ultralytics.com) and [YOLOv8](https://github.com/ultralytics/ultralytics).
+This dataset is intended for use with Ultralytics [HUB](https://hub.ultralytics.com/) and [YOLOv8](https://github.com/ultralytics/ultralytics).
 
 ## Dataset YAML
 
 A YAML (Yet Another Markup Language) file is used to define the dataset configuration. It contains information about the dataset's paths, classes, and other relevant information. In the case of the COCO8-Pose dataset, the `coco8-pose.yaml` file is maintained at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco8-pose.yaml](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/coco8-pose.yaml).
 
-!!! Example "ultralytics/cfg/datasets/coco8-pose.yaml"
+!!! example "ultralytics/cfg/datasets/coco8-pose.yaml"
 
     ```yaml
     --8<-- "ultralytics/cfg/datasets/coco8-pose.yaml"
@@ -24,9 +24,9 @@ A YAML (Yet Another Markup Language) file is used to define the dataset configur
 
 ## Usage
 
-To train a YOLOv8n-pose model on the COCO8-Pose dataset for 100 epochs with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
+To train a YOLOv8n-pose model on the COCO8-Pose dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) with an image size of 640, you can use the following code snippets. For a comprehensive list of available arguments, refer to the model [Training](../../modes/train.md) page.
 
-!!! Example "Train Example"
+!!! example "Train Example"
 
     === "Python"
 
@@ -44,14 +44,14 @@ To train a YOLOv8n-pose model on the COCO8-Pose dataset for 100 epochs with an i
 
         ```bash
         # Start training from a pretrained *.pt model
-        yolo detect train data=coco8-pose.yaml model=yolov8n-pose.pt epochs=100 imgsz=640
+        yolo pose train data=coco8-pose.yaml model=yolov8n-pose.pt epochs=100 imgsz=640
         ```
 
 ## Sample Images and Annotations
 
 Here are some examples of images from the COCO8-Pose dataset, along with their corresponding annotations:
 
-<img src="https://user-images.githubusercontent.com/26833433/236818283-52eecb96-fc6a-420d-8a26-d488b352dd4c.jpg" alt="Dataset sample image" width="800">
+<img src="https://github.com/ultralytics/docs/releases/download/0/mosaiced-training-batch-5.avif" alt="Dataset sample image" width="800">
 
 - **Mosaiced Image**: This image demonstrates a training batch composed of mosaiced dataset images. Mosaicing is a technique used during training that combines multiple images into a single image to increase the variety of objects and scenes within each training batch. This helps improve the model's ability to generalize to different object sizes, aspect ratios, and contexts.
 
@@ -61,7 +61,7 @@ The example showcases the variety and complexity of the images in the COCO8-Pose
 
 If you use the COCO dataset in your research or development work, please cite the following paper:
 
-!!! Quote ""
+!!! quote ""
 
     === "BibTeX"
 
@@ -76,7 +76,7 @@ If you use the COCO dataset in your research or development work, please cite th
         }
         ```
 
-We would like to acknowledge the COCO Consortium for creating and maintaining this valuable resource for the computer vision community. For more information about the COCO dataset and its creators, visit the [COCO dataset website](https://cocodataset.org/#home).
+We would like to acknowledge the COCO Consortium for creating and maintaining this valuable resource for the [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) community. For more information about the COCO dataset and its creators, visit the [COCO dataset website](https://cocodataset.org/#home).
 
 ## FAQ
 
@@ -88,10 +88,10 @@ The COCO8-Pose dataset is a small, versatile pose detection dataset that include
 
 To train a YOLOv8n-pose model on the COCO8-Pose dataset for 100 epochs with an image size of 640, follow these examples:
 
-!!! Example "Train Example"
+!!! example "Train Example"
 
     === "Python"
-    
+
         ```python
         from ultralytics import YOLO
 
@@ -103,9 +103,9 @@ To train a YOLOv8n-pose model on the COCO8-Pose dataset for 100 epochs with an i
         ```
 
     === "CLI"
-    
+
         ```bash
-        yolo detect train data=coco8-pose.yaml model=yolov8n.pt epochs=100 imgsz=640
+        yolo pose train data=coco8-pose.yaml model=yolov8n-pose.pt epochs=100 imgsz=640
         ```
 
 For a comprehensive list of training arguments, refer to the model [Training](../../modes/train.md) page.

@@ -5,7 +5,7 @@ keywords: Ultralytics, data conversion, YOLO models, COCO, DOTA, YOLO bbox2segme
 
 # Reference for `ultralytics/data/converter.py`
 
-!!! Note
+!!! note
 
     This file is available at [https://github.com/ultralytics/ultralytics/blob/main/ultralytics/data/converter.py](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/data/converter.py). If you spot a problem please help fix it by [contributing](https://docs.ultralytics.com/help/contributing/) a [Pull Request](https://github.com/ultralytics/ultralytics/edit/main/ultralytics/data/converter.py) 🛠️. Thank you 🙏!
 
@@ -20,6 +20,10 @@ keywords: Ultralytics, data conversion, YOLO models, COCO, DOTA, YOLO bbox2segme
 <br><br><hr><br>
 
 ## ::: ultralytics.data.converter.convert_coco
+
+<br><br><hr><br>
+
+## ::: ultralytics.data.converter.convert_segment_masks_to_yolo_seg
 
 <br><br><hr><br>
 

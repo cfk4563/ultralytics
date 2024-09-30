@@ -8,13 +8,24 @@ keywords: Ultralytics, YOLOv8, data visualization, line graphs, bar plots, pie c
 
 ## Introduction
 
-This guide provides a comprehensive overview of three fundamental types of data visualizations: line graphs, bar plots, and pie charts. Each section includes step-by-step instructions and code snippets on how to create these visualizations using Python.
+This guide provides a comprehensive overview of three fundamental types of [data visualizations](https://www.ultralytics.com/glossary/data-visualization): line graphs, bar plots, and pie charts. Each section includes step-by-step instructions and code snippets on how to create these visualizations using Python.
+
+<p align="center">
+  <br>
+  <iframe loading="lazy" width="720" height="405" src="https://www.youtube.com/embed/tVuLIMt4DMY"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+  <br>
+  <strong>Watch:</strong> How to generate Analytical Graphs using Ultralytics | Line Graphs, Bar Plots, Area and Pie Charts
+</p>
 
 ### Visual Samples
 
-|                                                     Line Graph                                                     |                                                     Bar Plot                                                     |                                                     Pie Chart                                                     |
-| :----------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
-| ![Line Graph](https://github.com/RizwanMunawar/RizwanMunawar/assets/62513924/eeabd90c-04fd-4e5b-aac9-c7777f892200) | ![Bar Plot](https://github.com/RizwanMunawar/RizwanMunawar/assets/62513924/c1da2d6a-99ff-43a8-b5dc-ca93127917f8) | ![Pie Chart](https://github.com/RizwanMunawar/RizwanMunawar/assets/62513924/9d8acce6-d9e4-4685-949d-cd4851483187) |
+|                                       Line Graph                                       |                                      Bar Plot                                      |                                      Pie Chart                                       |
+| :------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------: |
+| ![Line Graph](https://github.com/ultralytics/docs/releases/download/0/line-graph.avif) | ![Bar Plot](https://github.com/ultralytics/docs/releases/download/0/bar-plot.avif) | ![Pie Chart](https://github.com/ultralytics/docs/releases/download/0/pie-chart.avif) |
 
 ### Why Graphs are Important
 
@@ -22,7 +33,7 @@ This guide provides a comprehensive overview of three fundamental types of data 
 - Bar plots, on the other hand, are suitable for comparing quantities across different categories and showing relationships between a category and its numerical value.
 - Lastly, pie charts are effective for illustrating proportions among categories and showing parts of a whole.
 
-!!! Analytics "Analytics Examples"
+!!! analytics "Analytics Examples"
 
     === "Line Graph"
 
@@ -311,15 +322,7 @@ Here's a table with the `Analytics` arguments:
 
 ### Arguments `model.track`
 
-| Name      | Type    | Default        | Description                                                 |
-| --------- | ------- | -------------- | ----------------------------------------------------------- |
-| `source`  | `im0`   | `None`         | source directory for images or videos                       |
-| `persist` | `bool`  | `False`        | persisting tracks between frames                            |
-| `tracker` | `str`   | `botsort.yaml` | Tracking method 'bytetrack' or 'botsort'                    |
-| `conf`    | `float` | `0.3`          | Confidence Threshold                                        |
-| `iou`     | `float` | `0.5`          | IOU Threshold                                               |
-| `classes` | `list`  | `None`         | filter results by class, i.e. classes=0, or classes=[0,2,3] |
-| `verbose` | `bool`  | `True`         | Display the object tracking results                         |
+{% include "macros/track-args.md" %}
 
 ## Conclusion
 
@@ -369,7 +372,7 @@ For further details on configuring the `Analytics` class, visit the [Analytics u
 
 Using Ultralytics YOLOv8 for creating bar plots offers several benefits:
 
-1. **Real-time Data Visualization**: Seamlessly integrate object detection results into bar plots for dynamic updates.
+1. **Real-time Data Visualization**: Seamlessly integrate [object detection](https://www.ultralytics.com/glossary/object-detection) results into bar plots for dynamic updates.
 2. **Ease of Use**: Simple API and functions make it straightforward to implement and visualize data.
 3. **Customization**: Customize titles, labels, colors, and more to fit your specific requirements.
 4. **Efficiency**: Efficiently handle large amounts of data and update plots in real-time during video processing.
@@ -480,11 +483,11 @@ cv2.destroyAllWindows()
 
 To learn about the complete functionality, see the [Tracking](../modes/track.md) section.
 
-### What makes Ultralytics YOLOv8 different from other object detection solutions like OpenCV and TensorFlow?
+### What makes Ultralytics YOLOv8 different from other object detection solutions like [OpenCV](https://www.ultralytics.com/glossary/opencv) and [TensorFlow](https://www.ultralytics.com/glossary/tensorflow)?
 
 Ultralytics YOLOv8 stands out from other object detection solutions like OpenCV and TensorFlow for multiple reasons:
 
-1. **State-of-the-art Accuracy**: YOLOv8 provides superior accuracy in object detection, segmentation, and classification tasks.
+1. **State-of-the-art [Accuracy](https://www.ultralytics.com/glossary/accuracy)**: YOLOv8 provides superior accuracy in object detection, segmentation, and classification tasks.
 2. **Ease of Use**: User-friendly API allows for quick implementation and integration without extensive coding.
 3. **Real-time Performance**: Optimized for high-speed inference, suitable for real-time applications.
 4. **Diverse Applications**: Supports various tasks including multi-object tracking, custom model training, and exporting to different formats like ONNX, TensorRT, and CoreML.

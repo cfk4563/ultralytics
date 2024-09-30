@@ -6,27 +6,27 @@ keywords: YOLOv8, TorchScript, model export, Ultralytics, PyTorch, deep learning
 
 # YOLOv8 Model Export to TorchScript for Quick Deployment
 
-Deploying computer vision models across different environments, including embedded systems, web browsers, or platforms with limited Python support, requires a flexible and portable solution. TorchScript focuses on portability and the ability to run models in environments where the entire Python framework is unavailable. This makes it ideal for scenarios where you need to deploy your computer vision capabilities across various devices or platforms.
+Deploying [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) models across different environments, including embedded systems, web browsers, or platforms with limited Python support, requires a flexible and portable solution. TorchScript focuses on portability and the ability to run models in environments where the entire Python framework is unavailable. This makes it ideal for scenarios where you need to deploy your computer vision capabilities across various devices or platforms.
 
 Export to Torchscript to serialize your [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) models for cross-platform compatibility and streamlined deployment. In this guide, we'll show you how to export your YOLOv8 models to the TorchScript format, making it easier for you to use them across a wider range of applications.
 
 ## Why should you export to TorchScript?
 
-![Torchscript Overview](https://github.com/ultralytics/ultralytics/assets/26833433/6873349d-c2f6-4620-b3cc-7b26b0698d0b)
+![Torchscript Overview](https://github.com/ultralytics/docs/releases/download/0/torchscript-overview.avif)
 
 Developed by the creators of PyTorch, TorchScript is a powerful tool for optimizing and deploying PyTorch models across a variety of platforms. Exporting YOLOv8 models to [TorchScript](https://pytorch.org/docs/stable/jit.html) is crucial for moving from research to real-world applications. TorchScript, part of the PyTorch framework, helps make this transition smoother by allowing PyTorch models to be used in environments that don't support Python.
 
 The process involves two techniques: tracing and scripting. Tracing records operations during model execution, while scripting allows for the definition of models using a subset of Python. These techniques ensure that models like YOLOv8 can still work their magic even outside their usual Python environment.
 
-![TorchScript Script and Trace](https://github.com/ultralytics/ultralytics/assets/26833433/ea9ea24f-a3a9-44bb-aca7-9c358d7490d7)
+![TorchScript Script and Trace](https://github.com/ultralytics/docs/releases/download/0/torchscript-script-and-trace.avif)
 
 TorchScript models can also be optimized through techniques such as operator fusion and refinements in memory usage, ensuring efficient execution. Another advantage of exporting to TorchScript is its potential to accelerate model execution across various hardware platforms. It creates a standalone, production-ready representation of your PyTorch model that can be integrated into C++ environments, embedded systems, or deployed in web or mobile applications.
 
 ## Key Features of TorchScript Models
 
-TorchScript, a key part of the PyTorch ecosystem, provides powerful features for optimizing and deploying deep learning models.
+TorchScript, a key part of the PyTorch ecosystem, provides powerful features for optimizing and deploying [deep learning](https://www.ultralytics.com/glossary/deep-learning-dl) models.
 
-![TorchScript Features](https://github.com/ultralytics/ultralytics/assets/26833433/44c7c5e3-1146-42db-952a-9060f070fead)
+![TorchScript Features](https://github.com/ultralytics/docs/releases/download/0/torchscript-features.avif)
 
 Here are the key features that make TorchScript a valuable tool for developers:
 
@@ -44,11 +44,11 @@ Here are the key features that make TorchScript a valuable tool for developers:
 
 Before we look at the code for exporting YOLOv8 models to the TorchScript format, let's understand where TorchScript models are normally used.
 
-TorchScript offers various deployment options for machine learning models, such as:
+TorchScript offers various deployment options for [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) models, such as:
 
 - **C++ API**: The most common use case for TorchScript is its C++ API, which allows you to load and execute optimized TorchScript models directly within C++ applications. This is ideal for production environments where Python may not be suitable or available. The C++ API offers low-overhead and efficient execution of TorchScript models, maximizing performance potential.
 
-- **Mobile Deployment**: TorchScript offers tools for converting models into formats readily deployable on mobile devices. PyTorch Mobile provides a runtime for executing these models within iOS and Android apps. This enables low-latency, offline inference capabilities, enhancing user experience and data privacy.
+- **Mobile Deployment**: TorchScript offers tools for converting models into formats readily deployable on mobile devices. PyTorch Mobile provides a runtime for executing these models within iOS and Android apps. This enables low-latency, offline inference capabilities, enhancing user experience and [data privacy](https://www.ultralytics.com/glossary/data-privacy).
 
 - **Cloud Deployment**: TorchScript models can be deployed to cloud-based servers using solutions like TorchServe. It provides features like model versioning, batching, and metrics monitoring for scalable deployment in production environments. Cloud deployment with TorchScript can make your models accessible via APIs or other web services.
 
@@ -60,7 +60,7 @@ Exporting YOLOv8 models to TorchScript makes it easier to use them in different 
 
 To install the required package, run:
 
-!!! Tip "Installation"
+!!! tip "Installation"
 
     === "CLI"
 
@@ -75,7 +75,7 @@ For detailed instructions and best practices related to the installation process
 
 Before diving into the usage instructions, it's important to note that while all [Ultralytics YOLOv8 models](../models/index.md) are available for exporting, you can ensure that the model you select supports export functionality [here](../modes/export.md).
 
-!!! Example "Usage"
+!!! example "Usage"
 
     === "Python"
 
@@ -111,7 +111,7 @@ For more details about the export process, visit the [Ultralytics documentation 
 
 After successfully exporting your Ultralytics YOLOv8 models to TorchScript format, you can now deploy them. The primary and recommended first step for running a TorchScript model is to utilize the YOLO("model.torchscript") method, as outlined in the previous usage code snippet. However, for in-depth instructions on deploying your TorchScript models in various other settings, take a look at the following resources:
 
-- **[Explore Mobile Deployment](https://pytorch.org/mobile/home/)**: The PyTorch Mobile Documentation provides comprehensive guidelines for deploying models on mobile devices, ensuring your applications are efficient and responsive.
+- **[Explore Mobile Deployment](https://pytorch.org/mobile/home/)**: The [PyTorch](https://www.ultralytics.com/glossary/pytorch) Mobile Documentation provides comprehensive guidelines for deploying models on mobile devices, ensuring your applications are efficient and responsive.
 
 - **[Master Server-Side Deployment](https://pytorch.org/serve/getting_started.html)**: Learn how to deploy models server-side with TorchServe, offering a step-by-step tutorial for scalable, efficient model serving.
 
@@ -135,7 +135,7 @@ Exporting an Ultralytics YOLOv8 model to TorchScript allows for flexible, cross-
 
 To export a YOLOv8 model to TorchScript, you can use the following example code:
 
-!!! Example "Usage"
+!!! example "Usage"
 
     === "Python"
 
@@ -182,7 +182,7 @@ For more insights into deployment, visit the [PyTorch Mobile Documentation](http
 
 To install the required package for exporting YOLOv8 models, use the following command:
 
-!!! Tip "Installation"
+!!! tip "Installation"
 
     === "CLI"
 

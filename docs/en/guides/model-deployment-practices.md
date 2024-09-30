@@ -4,11 +4,22 @@ description: Learn essential tips, insights, and best practices for deploying co
 keywords: Model Deployment, Machine Learning Model Deployment, ML Model Deployment, AI Model Deployment, How to Deploy a Machine Learning Model, How to Deploy ML Models
 ---
 
-# Best Practices for Model Deployment
+# Best Practices for [Model Deployment](https://www.ultralytics.com/glossary/model-deployment)
 
 ## Introduction
 
 Model deployment is the [step in a computer vision project](./steps-of-a-cv-project.md) that brings a model from the development phase into a real-world application. There are various [model deployment options](./model-deployment-options.md): cloud deployment offers scalability and ease of access, edge deployment reduces latency by bringing the model closer to the data source, and local deployment ensures privacy and control. Choosing the right strategy depends on your application's needs, balancing speed, security, and scalability.
+
+<p align="center">
+  <br>
+  <iframe loading="lazy" width="720" height="405" src="https://www.youtube.com/embed/Tt_35YnQ9uk"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+  <br>
+  <strong>Watch:</strong> How to Optimize and Deploy AI Models: Best Practices, Troubleshooting, and Security Considerations
+</p>
 
 It's also important to follow best practices when deploying a model because deployment can significantly impact the effectiveness and reliability of the model's performance. In this guide, we'll focus on how to make sure that your model deployment is smooth, efficient, and secure.
 
@@ -20,13 +31,13 @@ With respect to YOLOv8, you can [export your model](../modes/export.md) to diffe
 
 ### Choosing a Deployment Environment
 
-Choosing where to deploy your computer vision model depends on multiple factors. Different environments have unique benefits and challenges, so it's essential to pick the one that best fits your needs.
+Choosing where to deploy your [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) model depends on multiple factors. Different environments have unique benefits and challenges, so it's essential to pick the one that best fits your needs.
 
 #### Cloud Deployment
 
 Cloud deployment is great for applications that need to scale up quickly and handle large amounts of data. Platforms like AWS, [Google Cloud](../yolov5/environments/google_cloud_quickstart_tutorial.md), and Azure make it easy to manage your models from training to deployment. They offer services like [AWS SageMaker](../integrations/amazon-sagemaker.md), Google AI Platform, and [Azure Machine Learning](./azureml-quickstart.md) to help you throughout the process.
 
-However, using the cloud can be expensive, especially with high data usage, and you might face latency issues if your users are far from the data centers. To manage costs and performance, it's important to optimize resource use and ensure compliance with data privacy rules.
+However, using the cloud can be expensive, especially with high data usage, and you might face latency issues if your users are far from the data centers. To manage costs and performance, it's important to optimize resource use and ensure compliance with [data privacy](https://www.ultralytics.com/glossary/data-privacy) rules.
 
 #### Edge Deployment
 
@@ -49,12 +60,12 @@ Optimizing your computer vision model helps it runs efficiently, especially when
 Pruning reduces the size of the model by removing weights that contribute little to the final output. It makes the model smaller and faster without significantly affecting accuracy. Pruning involves identifying and eliminating unnecessary parameters, resulting in a lighter model that requires less computational power. It is particularly useful for deploying models on devices with limited resources.
 
 <p align="center">
-  <img width="100%" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*rw2zAHw9Xlm7nSq1PCKbzQ.png" alt="Model Pruning Overview">
+  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/model-pruning-overview.avif" alt="Model Pruning Overview">
 </p>
 
 ### Model Quantization
 
-Quantization converts the model's weights and activations from high precision (like 32-bit floats) to lower precision (like 8-bit integers). By reducing the model size, it speeds up inference. Quantization-aware training (QAT) is a method where the model is trained with quantization in mind, preserving accuracy better than post-training quantization. By handling quantization during the training phase, the model learns to adjust to lower precision, maintaining performance while reducing computational demands.
+Quantization converts the model's weights and activations from high [precision](https://www.ultralytics.com/glossary/precision) (like 32-bit floats) to lower precision (like 8-bit integers). By reducing the model size, it speeds up inference. Quantization-aware training (QAT) is a method where the model is trained with quantization in mind, preserving accuracy better than post-training quantization. By handling quantization during the training phase, the model learns to adjust to lower precision, maintaining performance while reducing computational demands.
 
 <p align="center">
   <img width="100%" src="https://miro.medium.com/v2/resize:fit:1032/format:webp/1*Jlq_cyLvRdmp_K5jCd3LkA.png" alt="Model Quantization Overview">
@@ -62,10 +73,10 @@ Quantization converts the model's weights and activations from high precision (l
 
 ### Knowledge Distillation
 
-Knowledge distillation involves training a smaller, simpler model (the student) to mimic the outputs of a larger, more complex model (the teacher). The student model learns to approximate the teacher's predictions, resulting in a compact model that retains much of the teacher's accuracy. This technique is beneficial for creating efficient models suitable for deployment on edge devices with constrained resources.
+Knowledge distillation involves training a smaller, simpler model (the student) to mimic the outputs of a larger, more complex model (the teacher). The student model learns to approximate the teacher's predictions, resulting in a compact model that retains much of the teacher's [accuracy](https://www.ultralytics.com/glossary/accuracy). This technique is beneficial for creating efficient models suitable for deployment on edge devices with constrained resources.
 
 <p align="center">
-  <img width="100%" src="https://editor.analyticsvidhya.com/uploads/30818Knowledge%20Distillation%20Flow%20Chart%201.2.jpg" alt="Knowledge Distillation Overview">
+  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/knowledge-distillation-overview.avif" alt="Knowledge Distillation Overview">
 </p>
 
 ## Troubleshooting Deployment Issues
@@ -87,7 +98,7 @@ When deploying YOLOv8, several factors can affect model accuracy. Converting mod
 
 ### Inferences Are Taking Longer Than You Expected
 
-When deploying machine learning models, it's important that they run efficiently. If inferences are taking longer than expected, it can affect the user experience and the effectiveness of your application. Here are some steps to help you identify and resolve the problem:
+When deploying [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) models, it's important that they run efficiently. If inferences are taking longer than expected, it can affect the user experience and the effectiveness of your application. Here are some steps to help you identify and resolve the problem:
 
 - **Implement Warm-Up Runs**: Initial runs often include setup overhead, which can skew latency measurements. Perform a few warm-up inferences before measuring latency. Excluding these initial runs provides a more accurate measurement of the model's performance.
 - **Optimize the Inference Engine:** Double-check that the inference engine is fully optimized for your specific GPU architecture. Use the latest drivers and software versions tailored to your hardware to ensure maximum performance and compatibility.
@@ -113,7 +124,7 @@ It's essential to control who can access your model and its data to prevent unau
 
 ### Model Obfuscation
 
-Protecting your model from being reverse-engineered or misuse can be done through model obfuscation. It involves encrypting model parameters, such as weights and biases in neural networks, to make it difficult for unauthorized individuals to understand or alter the model. You can also obfuscate the model's architecture by renaming layers and parameters or adding dummy layers, making it harder for attackers to reverse-engineer it. You can also serve the model in a secure environment, like a secure enclave or using a trusted execution environment (TEE), can provide an extra layer of protection during inference.
+Protecting your model from being reverse-engineered or misuse can be done through model obfuscation. It involves encrypting model parameters, such as weights and biases in [neural networks](https://www.ultralytics.com/glossary/neural-network-nn), to make it difficult for unauthorized individuals to understand or alter the model. You can also obfuscate the model's architecture by renaming layers and parameters or adding dummy layers, making it harder for attackers to reverse-engineer it. You can also serve the model in a secure environment, like a secure enclave or using a trusted execution environment (TEE), can provide an extra layer of protection during inference.
 
 ## Share Ideas With Your Peers
 
@@ -122,7 +133,7 @@ Being part of a community of computer vision enthusiasts can help you solve prob
 ### Community Resources
 
 - **GitHub Issues:** Explore the [YOLOv8 GitHub repository](https://github.com/ultralytics/ultralytics/issues) and use the Issues tab to ask questions, report bugs, and suggest new features. The community and maintainers are very active and ready to help.
-- **Ultralytics Discord Server:** Join the [Ultralytics Discord server](https://ultralytics.com/discord/) to chat with other users and developers, get support, and share your experiences.
+- **Ultralytics Discord Server:** Join the [Ultralytics Discord server](https://discord.com/invite/ultralytics) to chat with other users and developers, get support, and share your experiences.
 
 ### Official Documentation
 

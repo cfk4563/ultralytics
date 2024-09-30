@@ -6,9 +6,9 @@ keywords: instance segmentation, tracking, YOLOv8, Ultralytics, object detection
 
 # Instance Segmentation and Tracking using Ultralytics YOLOv8 🚀
 
-## What is Instance Segmentation?
+## What is [Instance Segmentation](https://www.ultralytics.com/glossary/instance-segmentation)?
 
-[Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics/) instance segmentation involves identifying and outlining individual objects in an image, providing a detailed understanding of spatial distribution. Unlike semantic segmentation, it uniquely labels and precisely delineates each object, crucial for tasks like object detection and medical imaging.
+[Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics/) instance segmentation involves identifying and outlining individual objects in an image, providing a detailed understanding of spatial distribution. Unlike [semantic segmentation](https://www.ultralytics.com/glossary/semantic-segmentation), it uniquely labels and precisely delineates each object, crucial for tasks like [object detection](https://www.ultralytics.com/glossary/object-detection) and medical imaging.
 
 There are two types of instance segmentation tracking available in the Ultralytics package:
 
@@ -29,12 +29,12 @@ There are two types of instance segmentation tracking available in the Ultralyti
 
 ## Samples
 
-|                                                          Instance Segmentation                                                          |                                                           Instance Segmentation + Object Tracking                                                            |
-| :-------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![Ultralytics Instance Segmentation](https://github.com/RizwanMunawar/ultralytics/assets/62513924/d4ad3499-1f33-4871-8fbc-1be0b2643aa2) | ![Ultralytics Instance Segmentation with Object Tracking](https://github.com/RizwanMunawar/ultralytics/assets/62513924/2e5c38cc-fd5c-4145-9682-fa94ae2010a0) |
-|                                                  Ultralytics Instance Segmentation 😍                                                   |                                                  Ultralytics Instance Segmentation with Object Tracking 🔥                                                   |
+|                                                        Instance Segmentation                                                         |                                                                  Instance Segmentation + Object Tracking                                                                  |
+| :----------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| ![Ultralytics Instance Segmentation](https://github.com/ultralytics/docs/releases/download/0/ultralytics-instance-segmentation.avif) | ![Ultralytics Instance Segmentation with Object Tracking](https://github.com/ultralytics/docs/releases/download/0/ultralytics-instance-segmentation-object-tracking.avif) |
+|                                                 Ultralytics Instance Segmentation 😍                                                 |                                                         Ultralytics Instance Segmentation with Object Tracking 🔥                                                         |
 
-!!! Example "Instance Segmentation and Tracking"
+!!! example "Instance Segmentation and Tracking"
 
     === "Instance Segmentation"
 
@@ -146,7 +146,7 @@ For any inquiries, feel free to post your questions in the [Ultralytics Issue Se
 
 To perform instance segmentation using Ultralytics YOLOv8, initialize the YOLO model with a segmentation version of YOLOv8 and process video frames through it. Here's a simplified code example:
 
-!!! Example
+!!! example
 
     === "Python"
 
@@ -194,13 +194,13 @@ Instance segmentation identifies and outlines individual objects within an image
 
 ### Why should I use Ultralytics YOLOv8 for instance segmentation and tracking over other models like Mask R-CNN or Faster R-CNN?
 
-Ultralytics YOLOv8 offers real-time performance, superior accuracy, and ease of use compared to other models like Mask R-CNN or Faster R-CNN. YOLOv8 provides a seamless integration with Ultralytics HUB, allowing users to manage models, datasets, and training pipelines efficiently. Discover more about the benefits of YOLOv8 in the [Ultralytics blog](https://www.ultralytics.com/blog/introducing-ultralytics-yolov8).
+Ultralytics YOLOv8 offers real-time performance, superior [accuracy](https://www.ultralytics.com/glossary/accuracy), and ease of use compared to other models like Mask R-CNN or Faster R-CNN. YOLOv8 provides a seamless integration with Ultralytics HUB, allowing users to manage models, datasets, and training pipelines efficiently. Discover more about the benefits of YOLOv8 in the [Ultralytics blog](https://www.ultralytics.com/blog/introducing-ultralytics-yolov8).
 
 ### How can I implement object tracking using Ultralytics YOLOv8?
 
 To implement object tracking, use the `model.track` method and ensure that each object's ID is consistently assigned across frames. Below is a simple example:
 
-!!! Example
+!!! example
 
     === "Python"
 

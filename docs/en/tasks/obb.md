@@ -2,9 +2,10 @@
 comments: true
 description: Discover how to detect objects with rotation for higher precision using YOLOv8 OBB models. Learn, train, validate, and export OBB models effortlessly.
 keywords: Oriented Bounding Boxes, OBB, Object Detection, YOLOv8, Ultralytics, DOTAv1, Model Training, Model Export, AI, Machine Learning
+model_name: yolov8n-obb
 ---
 
-# Oriented Bounding Boxes Object Detection
+# Oriented Bounding Boxes [Object Detection](https://www.ultralytics.com/glossary/object-detection)
 
 <!-- obb task poster -->
 
@@ -14,38 +15,26 @@ The output of an oriented object detector is a set of rotated bounding boxes tha
 
 <!-- youtube video link for obb task -->
 
-!!! Tip "Tip"
+!!! tip
 
     YOLOv8 OBB models use the `-obb` suffix, i.e. `yolov8n-obb.pt` and are pretrained on [DOTAv1](https://github.com/ultralytics/ultralytics/blob/main/ultralytics/cfg/datasets/DOTAv1.yaml).
 
-<table>
-  <tr>
-    <td align="center">
-      <iframe loading="lazy" width="720" height="405" src="https://www.youtube.com/embed/Z7Z9pHF8wJc"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-      <br>
-      <strong>Watch:</strong> Object Detection using Ultralytics YOLOv8 Oriented Bounding Boxes (YOLOv8-OBB)
-    </td>
-    <td align="center">
-      <iframe loading="lazy" width="720" height="405" src="https://www.youtube.com/embed/uZ7SymQfqKI"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen>
-      </iframe>
-      <br>
-      <strong>Watch:</strong> Object Detection with YOLOv8-OBB using Ultralytics HUB
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <br>
+  <iframe loading="lazy" width="720" height="405" src="https://www.youtube.com/embed/Z7Z9pHF8wJc"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+  <br>
+  <strong>Watch:</strong> Object Detection using Ultralytics YOLOv8 Oriented Bounding Boxes (YOLOv8-OBB)
+</p>
 
 ## Visual Samples
 
-|                                                    Ships Detection using OBB                                                    |                                                    Vehicle Detection using OBB                                                    |
-| :-----------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------: |
-| ![Ships Detection using OBB](https://github.com/RizwanMunawar/ultralytics/assets/62513924/5051d324-416f-4b58-ab62-f1bf9d7134b0) | ![Vehicle Detection using OBB](https://github.com/RizwanMunawar/ultralytics/assets/62513924/9a366262-910a-403b-a5e2-9c68b75700d3) |
+|                                              Ships Detection using OBB                                               |                                               Vehicle Detection using OBB                                                |
+| :------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------: |
+| ![Ships Detection using OBB](https://github.com/ultralytics/docs/releases/download/0/ships-detection-using-obb.avif) | ![Vehicle Detection using OBB](https://github.com/ultralytics/docs/releases/download/0/vehicle-detection-using-obb.avif) |
 
 ## [Models](https://github.com/ultralytics/ultralytics/tree/main/ultralytics/cfg/models/v8)
 
@@ -66,9 +55,9 @@ YOLOv8 pretrained OBB models are shown here, which are pretrained on the [DOTAv1
 
 ## Train
 
-Train YOLOv8n-obb on the `dota8.yaml` dataset for 100 epochs at image size 640. For a full list of available arguments see the [Configuration](../usage/cfg.md) page.
+Train YOLOv8n-obb on the `dota8.yaml` dataset for 100 [epochs](https://www.ultralytics.com/glossary/epoch) at image size 640. For a full list of available arguments see the [Configuration](../usage/cfg.md) page.
 
-!!! Example
+!!! example
 
     === "Python"
 
@@ -97,16 +86,26 @@ Train YOLOv8n-obb on the `dota8.yaml` dataset for 100 epochs at image size 640. 
         yolo obb train data=dota8.yaml model=yolov8n-obb.yaml pretrained=yolov8n-obb.pt epochs=100 imgsz=640
         ```
 
+<p align="center">
+  <br>
+  <iframe loading="lazy" width="720" height="405" src="https://www.youtube.com/embed/uZ7SymQfqKI"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+  <br>
+  <strong>Watch:</strong> How to Train Ultralytics YOLOv8-OBB (Oriented Bounding Boxes) Models on DOTA Dataset using Ultralytics HUB
+</p>
+
 ### Dataset format
 
 OBB dataset format can be found in detail in the [Dataset Guide](../datasets/obb/index.md).
 
 ## Val
 
-Validate trained YOLOv8n-obb model accuracy on the DOTA8 dataset. No argument need to passed as the `model`
-retains its training `data` and arguments as model attributes.
+Validate trained YOLOv8n-obb model [accuracy](https://www.ultralytics.com/glossary/accuracy) on the DOTA8 dataset. No arguments are needed as the `model` retains its training `data` and arguments as model attributes.
 
-!!! Example
+!!! example
 
     === "Python"
 
@@ -136,7 +135,7 @@ retains its training `data` and arguments as model attributes.
 
 Use a trained YOLOv8n-obb model to run predictions on images.
 
-!!! Example
+!!! example
 
     === "Python"
 
@@ -158,13 +157,24 @@ Use a trained YOLOv8n-obb model to run predictions on images.
         yolo obb predict model=path/to/best.pt source='https://ultralytics.com/images/bus.jpg'  # predict with custom model
         ```
 
+<p align="center">
+  <br>
+  <iframe loading="lazy" width="720" height="405" src="https://www.youtube.com/embed/5XYdm5CYODA"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+  <br>
+  <strong>Watch:</strong> How to Detect and Track Storage Tanks using Ultralytics YOLOv8-OBB | Oriented Bounding Boxes | DOTA
+</p>
+
 See full `predict` mode details in the [Predict](../modes/predict.md) page.
 
 ## Export
 
 Export a YOLOv8n-obb model to a different format like ONNX, CoreML, etc.
 
-!!! Example
+!!! example
 
     === "Python"
 
@@ -188,21 +198,7 @@ Export a YOLOv8n-obb model to a different format like ONNX, CoreML, etc.
 
 Available YOLOv8-obb export formats are in the table below. You can export to any format using the `format` argument, i.e. `format='onnx'` or `format='engine'`. You can predict or validate directly on exported models, i.e. `yolo predict model=yolov8n-obb.onnx`. Usage examples are shown for your model after export completes.
 
-| Format                                            | `format` Argument | Model                         | Metadata | Arguments                                                            |
-| ------------------------------------------------- | ----------------- | ----------------------------- | -------- | -------------------------------------------------------------------- |
-| [PyTorch](https://pytorch.org/)                   | -                 | `yolov8n-obb.pt`              | ✅       | -                                                                    |
-| [TorchScript](../integrations/torchscript.md)     | `torchscript`     | `yolov8n-obb.torchscript`     | ✅       | `imgsz`, `optimize`, `batch`                                         |
-| [ONNX](../integrations/onnx.md)                   | `onnx`            | `yolov8n-obb.onnx`            | ✅       | `imgsz`, `half`, `dynamic`, `simplify`, `opset`, `batch`             |
-| [OpenVINO](../integrations/openvino.md)           | `openvino`        | `yolov8n-obb_openvino_model/` | ✅       | `imgsz`, `half`, `int8`, `batch`                                     |
-| [TensorRT](../integrations/tensorrt.md)           | `engine`          | `yolov8n-obb.engine`          | ✅       | `imgsz`, `half`, `dynamic`, `simplify`, `workspace`, `int8`, `batch` |
-| [CoreML](../integrations/coreml.md)               | `coreml`          | `yolov8n-obb.mlpackage`       | ✅       | `imgsz`, `half`, `int8`, `nms`, `batch`                              |
-| [TF SavedModel](../integrations/tf-savedmodel.md) | `saved_model`     | `yolov8n-obb_saved_model/`    | ✅       | `imgsz`, `keras`, `int8`, `batch`                                    |
-| [TF GraphDef](../integrations/tf-graphdef.md)     | `pb`              | `yolov8n-obb.pb`              | ❌       | `imgsz`, `batch`                                                     |
-| [TF Lite](../integrations/tflite.md)              | `tflite`          | `yolov8n-obb.tflite`          | ✅       | `imgsz`, `half`, `int8`, `batch`                                     |
-| [TF Edge TPU](../integrations/edge-tpu.md)        | `edgetpu`         | `yolov8n-obb_edgetpu.tflite`  | ✅       | `imgsz`                                                              |
-| [TF.js](../integrations/tfjs.md)                  | `tfjs`            | `yolov8n-obb_web_model/`      | ✅       | `imgsz`, `half`, `int8`, `batch`                                     |
-| [PaddlePaddle](../integrations/paddlepaddle.md)   | `paddle`          | `yolov8n-obb_paddle_model/`   | ✅       | `imgsz`, `batch`                                                     |
-| [NCNN](../integrations/ncnn.md)                   | `ncnn`            | `yolov8n-obb_ncnn_model/`     | ✅       | `imgsz`, `half`, `batch`                                             |
+{% include "macros/export-table.md" %}
 
 See full `export` details in the [Export](../modes/export.md) page.
 
@@ -216,7 +212,7 @@ Oriented Bounding Boxes (OBB) include an additional angle to enhance object loca
 
 To train a YOLOv8n-obb model with a custom dataset, follow the example below using Python or CLI:
 
-!!! Example
+!!! example
 
     === "Python"
 
@@ -246,7 +242,7 @@ YOLOv8-OBB models are pretrained on datasets like [DOTAv1](https://github.com/ul
 
 Exporting a YOLOv8-OBB model to ONNX format is straightforward using either Python or CLI:
 
-!!! Example
+!!! example
 
     === "Python"
 
@@ -272,7 +268,7 @@ For more export formats and details, refer to the [Export](../modes/export.md) p
 
 To validate a YOLOv8n-obb model, you can use Python or CLI commands as shown below:
 
-!!! Example
+!!! example
 
     === "Python"
 

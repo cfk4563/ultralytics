@@ -8,7 +8,7 @@ keywords: YOLOv8, AzureML, machine learning, cloud computing, quickstart, termin
 
 ## What is Azure?
 
-[Azure](https://azure.microsoft.com/) is Microsoft's cloud computing platform, designed to help organizations move their workloads to the cloud from on-premises data centers. With the full spectrum of cloud services including those for computing, databases, analytics, machine learning, and networking, users can pick and choose from these services to develop and scale new applications, or run existing applications, in the public cloud.
+[Azure](https://azure.microsoft.com/) is Microsoft's [cloud computing](https://www.ultralytics.com/glossary/cloud-computing) platform, designed to help organizations move their workloads to the cloud from on-premises data centers. With the full spectrum of cloud services including those for computing, databases, analytics, [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml), and networking, users can pick and choose from these services to develop and scale new applications, or run existing applications, in the public cloud.
 
 ## What is Azure Machine Learning (AzureML)?
 
@@ -33,7 +33,7 @@ Before you can get started, make sure you have access to an AzureML workspace. I
 From your AzureML workspace, select Compute > Compute instances > New, select the instance with the resources you need.
 
 <p align="center">
-  <img width="1280" src="https://github.com/ouphi/ultralytics/assets/17216799/3e92fcc0-a08e-41a4-af81-d289cfe3b8f2" alt="Create Azure Compute Instance">
+  <img width="1280" src="https://github.com/ultralytics/docs/releases/download/0/create-compute-arrow.avif" alt="Create Azure Compute Instance">
 </p>
 
 ## Quickstart from Terminal
@@ -41,7 +41,7 @@ From your AzureML workspace, select Compute > Compute instances > New, select th
 Start your compute and open a Terminal:
 
 <p align="center">
-  <img width="480" src="https://github.com/ouphi/ultralytics/assets/17216799/635152f1-f4a3-4261-b111-d416cb5ef357" alt="Open Terminal">
+  <img width="480" src="https://github.com/ultralytics/docs/releases/download/0/open-terminal.avif" alt="Open Terminal">
 </p>
 
 ### Create virtualenv
@@ -71,7 +71,7 @@ Predict:
 yolo predict model=yolov8n.pt source='https://ultralytics.com/images/bus.jpg'
 ```
 
-Train a detection model for 10 epochs with an initial learning_rate of 0.01:
+Train a detection model for 10 [epochs](https://www.ultralytics.com/glossary/epoch) with an initial learning_rate of 0.01:
 
 ```bash
 yolo train data=coco8.yaml model=yolov8n.pt epochs=10 lr0=0.01
@@ -86,7 +86,7 @@ You can find more [instructions to use the Ultralytics CLI here](../quickstart.m
 Open the compute Terminal.
 
 <p align="center">
-  <img width="480" src="https://github.com/ouphi/ultralytics/assets/17216799/635152f1-f4a3-4261-b111-d416cb5ef357" alt="Open Terminal">
+  <img width="480" src="https://github.com/ultralytics/docs/releases/download/0/open-terminal.avif" alt="Open Terminal">
 </p>
 
 From your compute terminal, you need to create a new ipykernel that will be used by your notebook to manage your dependencies:
@@ -216,12 +216,12 @@ Yes, AzureML allows you to use both the Ultralytics CLI and the Python interface
 
 Refer to the quickstart guides for more detailed instructions [here](../quickstart.md#use-ultralytics-with-cli) and [here](../quickstart.md#use-ultralytics-with-python).
 
-### What is the advantage of using Ultralytics YOLOv8 over other object detection models?
+### What is the advantage of using Ultralytics YOLOv8 over other [object detection](https://www.ultralytics.com/glossary/object-detection) models?
 
 Ultralytics YOLOv8 offers several unique advantages over competing object detection models:
 
 - **Speed**: Faster inference and training times compared to models like Faster R-CNN and SSD.
-- **Accuracy**: High accuracy in detection tasks with features like anchor-free design and enhanced augmentation strategies.
+- **[Accuracy](https://www.ultralytics.com/glossary/accuracy)**: High accuracy in detection tasks with features like anchor-free design and enhanced augmentation strategies.
 - **Ease of Use**: Intuitive API and CLI for quick setup, making it accessible both to beginners and experts.
 
 To explore more about YOLOv8's features, visit the [Ultralytics YOLO](https://www.ultralytics.com/yolo) page for detailed insights.

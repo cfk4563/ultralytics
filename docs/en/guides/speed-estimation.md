@@ -8,7 +8,7 @@ keywords: Ultralytics YOLOv8, speed estimation, object tracking, computer vision
 
 ## What is Speed Estimation?
 
-[Speed estimation](https://www.ultralytics.com/blog/ultralytics-yolov8-for-speed-estimation-in-computer-vision-projects) is the process of calculating the rate of movement of an object within a given context, often employed in computer vision applications. Using [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics/) you can now calculate the speed of object using [object tracking](../modes/track.md) alongside distance and time data, crucial for tasks like traffic and surveillance. The accuracy of speed estimation directly influences the efficiency and reliability of various applications, making it a key component in the advancement of intelligent systems and real-time decision-making processes.
+[Speed estimation](https://www.ultralytics.com/blog/ultralytics-yolov8-for-speed-estimation-in-computer-vision-projects) is the process of calculating the rate of movement of an object within a given context, often employed in [computer vision](https://www.ultralytics.com/glossary/computer-vision-cv) applications. Using [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics/) you can now calculate the speed of object using [object tracking](../modes/track.md) alongside distance and time data, crucial for tasks like traffic and surveillance. The accuracy of speed estimation directly influences the efficiency and reliability of various applications, making it a key component in the advancement of intelligent systems and real-time decision-making processes.
 
 <p align="center">
   <br>
@@ -33,12 +33,12 @@ keywords: Ultralytics YOLOv8, speed estimation, object tracking, computer vision
 
 ## Real World Applications
 
-|                                                                     Transportation                                                                      |                                                                      Transportation                                                                       |
-| :-----------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![Speed Estimation on Road using Ultralytics YOLOv8](https://github.com/RizwanMunawar/ultralytics/assets/62513924/c8a0fd4a-d394-436d-8de3-d5b754755fc7) | ![Speed Estimation on Bridge using Ultralytics YOLOv8](https://github.com/RizwanMunawar/ultralytics/assets/62513924/cee10e02-b268-4304-b73a-5b9cb42da669) |
-|                                                    Speed Estimation on Road using Ultralytics YOLOv8                                                    |                                                    Speed Estimation on Bridge using Ultralytics YOLOv8                                                    |
+|                                                                            Transportation                                                                            |                                                                              Transportation                                                                              |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| ![Speed Estimation on Road using Ultralytics YOLOv8](https://github.com/ultralytics/docs/releases/download/0/speed-estimation-on-road-using-ultralytics-yolov8.avif) | ![Speed Estimation on Bridge using Ultralytics YOLOv8](https://github.com/ultralytics/docs/releases/download/0/speed-estimation-on-bridge-using-ultralytics-yolov8.avif) |
+|                                                          Speed Estimation on Road using Ultralytics YOLOv8                                                           |                                                           Speed Estimation on Bridge using Ultralytics YOLOv8                                                            |
 
-!!! Example "Speed Estimation using YOLOv8 Example"
+!!! example "Speed Estimation using YOLOv8 Example"
 
     === "Speed Estimation"
 
@@ -72,7 +72,7 @@ keywords: Ultralytics YOLOv8, speed estimation, object tracking, computer vision
                 print("Video frame is empty or video processing has been successfully completed.")
                 break
 
-            tracks = model.track(im0, persist=True, show=False)
+            tracks = model.track(im0, persist=True)
 
             im0 = speed_obj.estimate_speed(im0, tracks)
             video_writer.write(im0)
@@ -94,26 +94,17 @@ keywords: Ultralytics YOLOv8, speed estimation, object tracking, computer vision
 | `reg_pts`          | `list` | `[(20, 400), (1260, 400)]` | List of region points for speed estimation.          |
 | `view_img`         | `bool` | `False`                    | Whether to display the image with annotations.       |
 | `line_thickness`   | `int`  | `2`                        | Thickness of the lines for drawing boxes and tracks. |
-| `region_thickness` | `int`  | `5`                        | Thickness of the region lines.                       |
 | `spdl_dist_thresh` | `int`  | `10`                       | Distance threshold for speed calculation.            |
 
 ### Arguments `model.track`
 
-| Name      | Type    | Default        | Description                                                 |
-| --------- | ------- | -------------- | ----------------------------------------------------------- |
-| `source`  | `im0`   | `None`         | source directory for images or videos                       |
-| `persist` | `bool`  | `False`        | persisting tracks between frames                            |
-| `tracker` | `str`   | `botsort.yaml` | Tracking method 'bytetrack' or 'botsort'                    |
-| `conf`    | `float` | `0.3`          | Confidence Threshold                                        |
-| `iou`     | `float` | `0.5`          | IOU Threshold                                               |
-| `classes` | `list`  | `None`         | filter results by class, i.e. classes=0, or classes=[0,2,3] |
-| `verbose` | `bool`  | `True`         | Display the object tracking results                         |
+{% include "macros/track-args.md" %}
 
 ## FAQ
 
 ### How do I estimate object speed using Ultralytics YOLOv8?
 
-Estimating object speed with Ultralytics YOLOv8 involves combining object detection and tracking techniques. First, you need to detect objects in each frame using the YOLOv8 model. Then, track these objects across frames to calculate their movement over time. Finally, use the distance traveled by the object between frames and the frame rate to estimate its speed.
+Estimating object speed with Ultralytics YOLOv8 involves combining [object detection](https://www.ultralytics.com/glossary/object-detection) and tracking techniques. First, you need to detect objects in each frame using the YOLOv8 model. Then, track these objects across frames to calculate their movement over time. Finally, use the distance traveled by the object between frames and the frame rate to estimate its speed.
 
 **Example**:
 
@@ -161,7 +152,7 @@ Using Ultralytics YOLOv8 for speed estimation offers significant advantages in t
 
 For more applications, see [advantages of speed estimation](#advantages-of-speed-estimation).
 
-### Can YOLOv8 be integrated with other AI frameworks like TensorFlow or PyTorch?
+### Can YOLOv8 be integrated with other AI frameworks like [TensorFlow](https://www.ultralytics.com/glossary/tensorflow) or [PyTorch](https://www.ultralytics.com/glossary/pytorch)?
 
 Yes, YOLOv8 can be integrated with other AI frameworks like TensorFlow and PyTorch. Ultralytics provides support for exporting YOLOv8 models to various formats like ONNX, TensorRT, and CoreML, ensuring smooth interoperability with other ML frameworks.
 
@@ -175,7 +166,7 @@ Learn more about exporting models in our [guide on export](../modes/export.md).
 
 ### How accurate is the speed estimation using Ultralytics YOLOv8?
 
-The accuracy of speed estimation using Ultralytics YOLOv8 depends on several factors, including the quality of the object tracking, the resolution and frame rate of the video, and environmental variables. While the speed estimator provides reliable estimates, it may not be 100% accurate due to variances in frame processing speed and object occlusion.
+The [accuracy](https://www.ultralytics.com/glossary/accuracy) of speed estimation using Ultralytics YOLOv8 depends on several factors, including the quality of the object tracking, the resolution and frame rate of the video, and environmental variables. While the speed estimator provides reliable estimates, it may not be 100% accurate due to variances in frame processing speed and object occlusion.
 
 **Note**: Always consider margin of error and validate the estimates with ground truth data when possible.
 

@@ -8,12 +8,23 @@ keywords: Streamlit, YOLOv8, Real-time Object Detection, Streamlit Application, 
 
 ## Introduction
 
-Streamlit makes it simple to build and deploy interactive web applications. Combining this with Ultralytics YOLOv8 allows for real-time object detection and analysis directly in your browser. YOLOv8 high accuracy and speed ensure seamless performance for live video streams, making it ideal for applications in security, retail, and beyond.
+Streamlit makes it simple to build and deploy interactive web applications. Combining this with Ultralytics YOLOv8 allows for real-time [object detection](https://www.ultralytics.com/glossary/object-detection) and analysis directly in your browser. YOLOv8 high accuracy and speed ensure seamless performance for live video streams, making it ideal for applications in security, retail, and beyond.
 
-|                                                                   Aquaculture                                                                   |                                                                 Animals husbandry                                                                  |
-| :---------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------: |
-| ![Fish Detection using Ultralytics YOLOv8](https://github.com/RizwanMunawar/RizwanMunawar/assets/62513924/ea6d7ece-cded-4db7-b810-1f8433df2c96) | ![Animals Detection using Ultralytics YOLOv8](https://github.com/RizwanMunawar/RizwanMunawar/assets/62513924/2e1f4781-60ab-4e72-b3e4-726c10cd223c) |
-|                                                     Fish Detection using Ultralytics YOLOv8                                                     |                                                     Animals Detection using Ultralytics YOLOv8                                                     |
+<p align="center">
+  <br>
+  <iframe loading="lazy" width="720" height="405" src="https://www.youtube.com/embed/N8TxB43y-xM"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+  <br>
+  <strong>Watch:</strong> How to Use Streamlit with Ultralytics for Real-Time [Computer Vision](https://www.ultralytics.com/glossary/computer-vision-cv) in Your Browser
+</p>
+
+|                                                                Aquaculture                                                                 |                                                          Animals husbandry                                                           |
+| :----------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------: |
+| ![Fish Detection using Ultralytics YOLOv8](https://github.com/ultralytics/docs/releases/download/0/fish-detection-ultralytics-yolov8.avif) | ![Animals Detection using Ultralytics YOLOv8](https://github.com/ultralytics/docs/releases/download/0/animals-detection-yolov8.avif) |
+|                                                  Fish Detection using Ultralytics YOLOv8                                                   |                                              Animals Detection using Ultralytics YOLOv8                                              |
 
 ## Advantages of Live Inference
 
@@ -27,7 +38,7 @@ Streamlit makes it simple to build and deploy interactive web applications. Comb
 
     Before you start building the application, ensure you have the Ultralytics Python Package installed. You can install it using the command **pip install ultralytics**
 
-!!! Example "Streamlit Application"
+!!! example "Streamlit Application"
 
     === "Python"
 
@@ -49,7 +60,7 @@ This will launch the Streamlit application in your default web browser. You will
 
 You can optionally supply a specific model in Python:
 
-!!! Example "Streamlit Application with a custom model"
+!!! example "Streamlit Application with a custom model"
 
     === "Python"
 
@@ -75,7 +86,7 @@ Engage with the community to learn more, troubleshoot issues, and share your pro
 ### Where to Find Help and Support
 
 - **GitHub Issues:** Visit the [Ultralytics GitHub repository](https://github.com/ultralytics/ultralytics/issues) to raise questions, report bugs, and suggest features.
-- **Ultralytics Discord Server:** Join the [Ultralytics Discord server](https://ultralytics.com/discord/) to connect with other users and developers, get support, share knowledge, and brainstorm ideas.
+- **Ultralytics Discord Server:** Join the [Ultralytics Discord server](https://discord.com/invite/ultralytics) to connect with other users and developers, get support, share knowledge, and brainstorm ideas.
 
 ### Official Documentation
 
@@ -93,23 +104,23 @@ pip install ultralytics
 
 Then, you can create a basic Streamlit application to run live inference:
 
-!!! Example "Streamlit Application"
+!!! example "Streamlit Application"
 
     === "Python"
 
-    ```python
-    from ultralytics import solutions
+        ```python
+        from ultralytics import solutions
 
-    solutions.inference()
+        solutions.inference()
 
-    ### Make sure to run the file using command `streamlit run <file-name.py>`
-    ```
+        ### Make sure to run the file using command `streamlit run <file-name.py>`
+        ```
 
     === "CLI"
 
-    ```bash
-    yolo streamlit-predict
-    ```
+        ```bash
+        yolo streamlit-predict
+        ```
 
 For more details on the practical setup, refer to the [Streamlit Application Code section](#streamlit-application-code) of the documentation.
 
@@ -117,7 +128,7 @@ For more details on the practical setup, refer to the [Streamlit Application Cod
 
 Using Ultralytics YOLOv8 with Streamlit for real-time object detection offers several advantages:
 
-- **Seamless Real-Time Detection**: Achieve high-accuracy, real-time object detection directly from webcam feeds.
+- **Seamless Real-Time Detection**: Achieve high-[accuracy](https://www.ultralytics.com/glossary/accuracy), real-time object detection directly from webcam feeds.
 - **User-Friendly Interface**: Streamlit's intuitive interface allows easy use and deployment without extensive technical knowledge.
 - **Resource Efficiency**: YOLOv8's optimized algorithms ensure high-speed processing with minimal computational resources.
 
@@ -141,7 +152,7 @@ Real-time object detection using Streamlit and Ultralytics YOLOv8 can be applied
 - **Retail**: Customer counting, shelf management, and more.
 - **Wildlife and Agriculture**: Monitoring animals and crop conditions.
 
-For more in-depth use cases and examples, explore [Ultralytics Solutions](https://docs.ultralytics.com/solutions).
+For more in-depth use cases and examples, explore [Ultralytics Solutions](https://docs.ultralytics.com/solutions/).
 
 ### How does Ultralytics YOLOv8 compare to other object detection models like YOLOv5 and RCNNs?
 
@@ -151,4 +162,4 @@ Ultralytics YOLOv8 provides several enhancements over prior models like YOLOv5 a
 - **Ease of Use**: Simplified interfaces and deployment.
 - **Resource Efficiency**: Optimized for better speed with minimal computational requirements.
 
-For a comprehensive comparison, check [Ultralytics YOLOv8 Documentation](https://docs.ultralytics.com/models/yolov8) and related blog posts discussing model performance.
+For a comprehensive comparison, check [Ultralytics YOLOv8 Documentation](https://docs.ultralytics.com/models/yolov8/) and related blog posts discussing model performance.

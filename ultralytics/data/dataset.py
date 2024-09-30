@@ -296,7 +296,7 @@ class GroundingDataset(YOLODataset):
         """Loads annotations from a JSON file, filters, and normalizes bounding boxes for each image."""
         labels = []
         LOGGER.info("Loading annotation file...")
-        with open(self.json_file, "r") as f:
+        with open(self.json_file) as f:
             annotations = json.load(f)
         images = {f'{x["id"]:d}': x for x in annotations["images"]}
         img_to_anns = defaultdict(list)
@@ -431,6 +431,12 @@ class ClassificationDataset:
             self.samples = self.samples[: round(len(self.samples) * args.fraction)]
         self.prefix = colorstr(f"{prefix}: ") if prefix else ""
         self.cache_ram = args.cache is True or str(args.cache).lower() == "ram"  # cache images into RAM
+        if self.cache_ram:
+            LOGGER.warning(
+                "WARNING ⚠️ Classification `cache_ram` training has known memory leak in "
+                "https://github.com/ultralytics/ultralytics/issues/9824, setting `cache_ram=False`."
+            )
+            self.cache_ram = False
         self.cache_disk = str(args.cache).lower() == "disk"  # cache images on hard drive as uncompressed *.npy files
         self.samples = self.verify_images()  # filter out bad images
         self.samples = [list(x) + [Path(x[0]).with_suffix(".npy"), None] for x in self.samples]  # file, index, npy, im

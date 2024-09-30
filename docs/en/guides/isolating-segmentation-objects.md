@@ -9,7 +9,7 @@ keywords: Ultralytics, segmentation, object isolation, Predict Mode, YOLOv8, mac
 After performing the [Segment Task](../tasks/segment.md), it's sometimes desirable to extract the isolated objects from the inference results. This guide provides a generic recipe on how to accomplish this using the Ultralytics [Predict Mode](../modes/predict.md).
 
 <p align="center">
-  <img src="https://github.com/ultralytics/ultralytics/assets/62214284/1787d76b-ad5f-43f9-a39c-d45c9157f38a" alt="Example Isolated Object Segmentation">
+  <img src="https://github.com/ultralytics/docs/releases/download/0/isolated-object-segmentation.avif" alt="Example Isolated Object Segmentation">
 </p>
 
 ## Recipe Walk Through
@@ -96,7 +96,7 @@ After performing the [Segment Task](../tasks/segment.md), it's sometimes desirab
 
     1. For more info on `c.masks.xy` see [Masks Section from Predict Mode](../modes/predict.md#masks).
 
-    2. Here the values are cast into `np.int32` for compatibility with `drawContours()` function from OpenCV.
+    2. Here the values are cast into `np.int32` for compatibility with `drawContours()` function from [OpenCV](https://www.ultralytics.com/glossary/opencv).
 
     3. The OpenCV `drawContours()` function expects contours to have a shape of `[N, 1, 2]` expand section below for more details.
 
@@ -137,7 +137,7 @@ After performing the [Segment Task](../tasks/segment.md), it's sometimes desirab
 
     ### Object Isolation Options
 
-    !!! example ""
+    !!! example
 
         === "Black Background Pixels"
 
@@ -162,7 +162,7 @@ After performing the [Segment Task](../tasks/segment.md), it's sometimes desirab
                 There are no additional steps required if keeping full size image.
 
                 <figure markdown>
-                    ![Example Full size Isolated Object Image Black Background](https://github.com/ultralytics/ultralytics/assets/62214284/845c00d0-52a6-4b1e-8010-4ba73e011b99){ width=240 }
+                    ![Example Full size Isolated Object Image Black Background](https://github.com/ultralytics/docs/releases/download/0/full-size-isolated-object-black-background.avif){ width=240 }
                     <figcaption>Example full-size output</figcaption>
                 </figure>
 
@@ -170,7 +170,7 @@ After performing the [Segment Task](../tasks/segment.md), it's sometimes desirab
 
                 Additional steps required to crop image to only include object region.
 
-                ![Example Crop Isolated Object Image Black Background](https://github.com/ultralytics/ultralytics/assets/62214284/103dbf90-c169-4f77-b791-76cdf09c6f22){ align="right" }
+                ![Example Crop Isolated Object Image Black Background](https://github.com/ultralytics/docs/releases/download/0/example-crop-isolated-object-image-black-background.avif){ align="right" }
                 ```{ .py .annotate }
                 # (1) Bounding box coordinates
                 x1, y1, x2, y2 = c.boxes.xyxy.cpu().numpy().squeeze().astype(np.int32)
@@ -178,7 +178,7 @@ After performing the [Segment Task](../tasks/segment.md), it's sometimes desirab
                 iso_crop = isolated[y1:y2, x1:x2]
                 ```
 
-                1.  For more information on bounding box results, see [Boxes Section from Predict Mode](../modes/predict.md/#boxes)
+                1.  For more information on [bounding box](https://www.ultralytics.com/glossary/bounding-box) results, see [Boxes Section from Predict Mode](../modes/predict.md/#boxes)
 
                 ??? question "What does this code do?"
 
@@ -208,7 +208,7 @@ After performing the [Segment Task](../tasks/segment.md), it's sometimes desirab
                 There are no additional steps required if keeping full size image.
 
                 <figure markdown>
-                    ![Example Full size Isolated Object Image No Background](https://github.com/ultralytics/ultralytics/assets/62214284/b1043ee0-369a-4019-941a-9447a9771042){ width=240 }
+                    ![Example Full size Isolated Object Image No Background](https://github.com/ultralytics/docs/releases/download/0/example-full-size-isolated-object-image-no-background.avif){ width=240 }
                     <figcaption>Example full-size output + transparent background</figcaption>
                 </figure>
 
@@ -216,7 +216,7 @@ After performing the [Segment Task](../tasks/segment.md), it's sometimes desirab
 
                 Additional steps required to crop image to only include object region.
 
-                ![Example Crop Isolated Object Image No Background](https://github.com/ultralytics/ultralytics/assets/62214284/5910244f-d1e1-44af-af7f-6dea4c688da8){ align="right" }
+                ![Example Crop Isolated Object Image No Background](https://github.com/ultralytics/docs/releases/download/0/example-crop-isolated-object-image-no-background.avif){ align="right" }
                 ```{ .py .annotate }
                 # (1) Bounding box coordinates
                 x1, y1, x2, y2 = c.boxes.xyxy.cpu().numpy().squeeze().astype(np.int32)
@@ -253,7 +253,7 @@ After performing the [Segment Task](../tasks/segment.md), it's sometimes desirab
         _ = cv2.imwrite(f"{img_name}_{label}-{ci}.png", iso_crop)
         ```
 
-        - In this example, the `img_name` is the base-name of the source image file, `label` is the detected class-name, and `ci` is the index of the object detection (in case of multiple instances with the same class name).
+        - In this example, the `img_name` is the base-name of the source image file, `label` is the detected class-name, and `ci` is the index of the [object detection](https://www.ultralytics.com/glossary/object-detection) (in case of multiple instances with the same class name).
 
 ## Full Example code
 

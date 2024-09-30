@@ -6,7 +6,7 @@ keywords: YOLOv8, TF SavedModel, Ultralytics, TensorFlow, model export, model de
 
 # Understand How to Export to TF SavedModel Format From YOLOv8
 
-Deploying machine learning models can be challenging. However, using an efficient and flexible model format can make your job easier. TF SavedModel is an open-source machine-learning framework used by TensorFlow to load machine-learning models in a consistent way. It is like a suitcase for TensorFlow models, making them easy to carry and use on different devices and systems.
+Deploying [machine learning](https://www.ultralytics.com/glossary/machine-learning-ml) models can be challenging. However, using an efficient and flexible model format can make your job easier. TF SavedModel is an open-source machine-learning framework used by TensorFlow to load machine-learning models in a consistent way. It is like a suitcase for TensorFlow models, making them easy to carry and use on different devices and systems.
 
 Learning how to export to TF SavedModel from [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics) models can help you deploy models easily across different platforms and environments. In this guide, we'll walk through how to convert your models to the TF SavedModel format, simplifying the process of running inferences with your models on different devices.
 
@@ -15,7 +15,7 @@ Learning how to export to TF SavedModel from [Ultralytics YOLOv8](https://github
 The TensorFlow SavedModel format is a part of the TensorFlow ecosystem developed by Google as shown below. It is designed to save and serialize TensorFlow models seamlessly. It encapsulates the complete details of models like the architecture, weights, and even compilation information. This makes it straightforward to share, deploy, and continue training across different environments.
 
 <p align="center">
-  <img width="100%" src="https://sdtimes.com/wp-content/uploads/2019/10/0_C7GCWYlsMrhUYRYi.png" alt="TF SavedModel">
+  <img width="100%" src="https://github.com/ultralytics/docs/releases/download/0/tf-savedmodel-overview.avif" alt="TF SavedModel">
 </p>
 
 The TF SavedModel has a key advantage: its compatibility. It works well with TensorFlow Serving, TensorFlow Lite, and TensorFlow.js. This compatibility makes it easier to share and deploy models across various platforms, including web and mobile applications. The TF SavedModel format is useful both for research and production. It provides a unified way to manage your models, ensuring they are ready for any application.
@@ -28,7 +28,7 @@ Here are the key features that make TF SavedModel a great option for AI develope
 
 - **Ease of Deployment**: TF SavedModel bundles the computational graph, trained parameters, and necessary metadata into a single package. They can be easily loaded and used for inference without requiring the original code that built the model. This makes the deployment of TensorFlow models straightforward and efficient in various production environments.
 
-- **Asset Management**: TF SavedModel supports the inclusion of external assets such as vocabularies, embeddings, or lookup tables. These assets are stored alongside the graph definition and variables, ensuring they are available when the model is loaded. This feature simplifies the management and distribution of models that rely on external resources.
+- **Asset Management**: TF SavedModel supports the inclusion of external assets such as vocabularies, [embeddings](https://www.ultralytics.com/glossary/embeddings), or lookup tables. These assets are stored alongside the graph definition and variables, ensuring they are available when the model is loaded. This feature simplifies the management and distribution of models that rely on external resources.
 
 ## Deployment Options with TF SavedModel
 
@@ -42,7 +42,7 @@ TF SavedModel provides a range of options to deploy your machine learning models
 
 - **Mobile and Embedded Devices:** TensorFlow Lite, a lightweight solution for running machine learning models on mobile, embedded, and IoT devices, supports converting TF SavedModels to the TensorFlow Lite format. This allows you to deploy your models on a wide range of devices, from smartphones and tablets to microcontrollers and edge devices.
 
-- **TensorFlow Runtime:** TensorFlow Runtime (`tfrt`) is a high-performance runtime for executing TensorFlow graphs. It provides lower-level APIs for loading and running TF SavedModels in C++ environments. TensorFlow Runtime offers better performance compared to the standard TensorFlow runtime. It is suitable for deployment scenarios that require low-latency inference and tight integration with existing C++ codebases.
+- **TensorFlow Runtime:** TensorFlow Runtime (`tfrt`) is a high-performance runtime for executing [TensorFlow](https://www.ultralytics.com/glossary/tensorflow) graphs. It provides lower-level APIs for loading and running TF SavedModels in C++ environments. TensorFlow Runtime offers better performance compared to the standard TensorFlow runtime. It is suitable for deployment scenarios that require low-latency inference and tight integration with existing C++ codebases.
 
 ## Exporting YOLOv8 Models to TF SavedModel
 
@@ -52,7 +52,7 @@ By exporting YOLOv8 models to the TF SavedModel format, you enhance their adapta
 
 To install the required package, run:
 
-!!! Tip "Installation"
+!!! tip "Installation"
 
     === "CLI"
 
@@ -67,7 +67,7 @@ For detailed instructions and best practices related to the installation process
 
 Before diving into the usage instructions, it's important to note that while all [Ultralytics YOLOv8 models](../models/index.md) are available for exporting, you can ensure that the model you select supports export functionality [here](../modes/export.md).
 
-!!! Example "Usage"
+!!! example "Usage"
 
     === "Python"
 
@@ -125,7 +125,7 @@ For more information on integrating Ultralytics YOLOv8 with other platforms and 
 
 Exporting an Ultralytics YOLO model to the TensorFlow SavedModel format is straightforward. You can use either Python or CLI to achieve this:
 
-!!! Example "Exporting YOLOv8 to TF SavedModel"
+!!! example "Exporting YOLOv8 to TF SavedModel"
 
     === "Python"
 
@@ -157,7 +157,7 @@ Refer to the [Ultralytics Export documentation](../modes/export.md) for more det
 
 ### Why should I use the TensorFlow SavedModel format?
 
-The TensorFlow SavedModel format offers several advantages for model deployment:
+The TensorFlow SavedModel format offers several advantages for [model deployment](https://www.ultralytics.com/glossary/model-deployment):
 
 - **Portability:** It provides a language-neutral format, making it easy to share and deploy models across different environments.
 - **Compatibility:** Integrates seamlessly with tools like TensorFlow Serving, TensorFlow Lite, and TensorFlow.js, which are essential for deploying models on various platforms, including web and mobile applications.
