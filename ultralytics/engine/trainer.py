@@ -12,7 +12,7 @@ import os
 import subprocess
 import time
 import warnings
-from copy import deepcopy
+from copy import copy, deepcopy
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -469,11 +469,11 @@ class BaseTrainer:
 
         if RANK in {-1, 0}:
             # Do final val with best.pt
-            LOGGER.info(
-                f"\n{epoch - self.start_epoch + 1} epochs completed in "
-                f"{(time.time() - self.train_time_start) / 3600:.3f} hours."
-            )
+            epochs = epoch - self.start_epoch + 1  # total training epochs
+            seconds = time.time() - self.train_time_start  # total training seconds
+            LOGGER.info(f"\n{epochs} epochs completed in {seconds / 3600:.3f} hours.")
             self.final_eval()
+            self.validator.metrics.training = {"epochs": epochs, "seconds": seconds}  # add training speed
             if self.args.plots:
                 self.plot_metrics()
             self.run_callbacks("on_train_end")
@@ -749,7 +749,7 @@ class BaseTrainer:
             self.train_loader.dataset.mosaic = False
         if hasattr(self.train_loader.dataset, "close_mosaic"):
             LOGGER.info("Closing dataloader mosaic")
-            self.train_loader.dataset.close_mosaic(hyp=self.args)
+            self.train_loader.dataset.close_mosaic(hyp=copy(self.args))
 
     def build_optimizer(self, model, name="auto", lr=0.001, momentum=0.9, decay=1e-5, iterations=1e5):
         """

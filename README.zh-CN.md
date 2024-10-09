@@ -10,8 +10,8 @@
     <a href="https://github.com/ultralytics/ultralytics/actions/workflows/ci.yaml"><img src="https://github.com/ultralytics/ultralytics/actions/workflows/ci.yaml/badge.svg" alt="Ultralytics CI"></a>
     <a href="https://zenodo.org/badge/latestdoi/264818686"><img src="https://zenodo.org/badge/264818686.svg" alt="Ultralytics YOLO Citation"></a>
     <a href="https://hub.docker.com/r/ultralytics/ultralytics"><img src="https://img.shields.io/docker/pulls/ultralytics/ultralytics?logo=docker" alt="Ultralytics Docker Pulls"></a>
-    <a href="https://ultralytics.com/discord"><img alt="Ultralytics Discord" src="https://img.shields.io/discord/1089800235347353640?logo=discord&logoColor=white&label=Discord&color=blue"></a>
-    <a href="https://community.ultralytics.com"><img alt="Ultralytics Forums" src="https://img.shields.io/discourse/users?server=https%3A%2F%2Fcommunity.ultralytics.com&logo=discourse&label=Forums&color=blue"></a>
+    <a href="https://discord.com/invite/ultralytics"><img alt="Ultralytics Discord" src="https://img.shields.io/discord/1089800235347353640?logo=discord&logoColor=white&label=Discord&color=blue"></a>
+    <a href="https://community.ultralytics.com/"><img alt="Ultralytics Forums" src="https://img.shields.io/discourse/users?server=https%3A%2F%2Fcommunity.ultralytics.com&logo=discourse&label=Forums&color=blue"></a>
     <a href="https://reddit.com/r/ultralytics"><img alt="Ultralytics Reddit" src="https://img.shields.io/reddit/subreddit-subscribers/ultralytics?style=flat&logo=reddit&logoColor=white&label=Reddit&color=blue"></a>
     <br>
     <a href="https://console.paperspace.com/github/ultralytics/ultralytics"><img src="https://assets.paperspace.io/img/gradient-badge.svg" alt="Run Ultralytics on Gradient"></a>
@@ -22,7 +22,7 @@
 
 [Ultralytics](https://www.ultralytics.com/) [YOLO11](https://github.com/ultralytics/ultralytics) 是一个尖端的、最先进（SOTA）的模型，基于之前 YOLO 版本的成功，并引入了新功能和改进以进一步提升性能和灵活性。YOLO11 被设计得快速、准确且易于使用，是进行广泛对象检测和跟踪、实例分割、图像分类和姿态估计任务的理想选择。
 
-我们希望这里的资源能帮助你充分利用 YOLO。请浏览 Ultralytics <a href="https://docs.ultralytics.com/">文档</a> 以获取详细信息，在 <a href="https://github.com/ultralytics/ultralytics/issues/new/choose">GitHub</a> 上提出问题或讨论，成为 Ultralytics <a href="https://ultralytics.com/discord">Discord</a>、<a href="https://reddit.com/r/ultralytics">Reddit</a> 和 <a href="https://community.ultralytics.com">论坛</a> 的成员！
+我们希望这里的资源能帮助你充分利用 YOLO。请浏览 Ultralytics <a href="https://docs.ultralytics.com/">文档</a> 以获取详细信息，在 <a href="https://github.com/ultralytics/ultralytics/issues/new/choose">GitHub</a> 上提出问题或讨论，成为 Ultralytics <a href="https://discord.com/invite/ultralytics">Discord</a>、<a href="https://reddit.com/r/ultralytics">Reddit</a> 和 <a href="https://community.ultralytics.com/">论坛</a> 的成员！
 
 想申请企业许可证，请完成 [Ultralytics Licensing](https://www.ultralytics.com/license) 上的表单。
 
@@ -41,7 +41,7 @@
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="2%" alt="space">
   <a href="https://ultralytics.com/bilibili"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-bilibili.png" width="2%" alt="Ultralytics BiliBili"></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="2%" alt="space">
-  <a href="https://ultralytics.com/discord"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-discord.png" width="2%" alt="Ultralytics Discord"></a>
+  <a href="https://discord.com/invite/ultralytics"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-discord.png" width="2%" alt="Ultralytics Discord"></a>
 </div>
 </div>
 
@@ -126,11 +126,11 @@ YOLO11 [检测](https://docs.ultralytics.com/tasks/detect/)、[分割](https://d
 
 | 模型                                                                                 | 尺寸<br><sup>(像素) | mAP<sup>val<br>50-95 | 速度<br><sup>CPU ONNX<br>(ms) | 速度<br><sup>T4 TensorRT10<br>(ms) | 参数<br><sup>(M) | FLOPs<br><sup>(B) |
 | ------------------------------------------------------------------------------------ | ------------------- | -------------------- | ----------------------------- | ---------------------------------- | ---------------- | ----------------- |
-| [YOLO11n](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt) | 640                 | 39.5                 | 56.12 ± 0.82 ms               | 1.55 ± 0.01 ms                     | 2.6              | 6.5               |
-| [YOLO11s](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s.pt) | 640                 | 47.0                 | 90.01 ± 1.17 ms               | 2.46 ± 0.00 ms                     | 9.4              | 21.5              |
-| [YOLO11m](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11m.pt) | 640                 | 51.5                 | 183.20 ± 2.04 ms              | 4.70 ± 0.06 ms                     | 20.1             | 68.0              |
-| [YOLO11l](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11l.pt) | 640                 | 53.4                 | 238.64 ± 1.39 ms              | 6.16 ± 0.08 ms                     | 25.3             | 86.9              |
-| [YOLO11x](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x.pt) | 640                 | 54.7                 | 462.78 ± 6.66 ms              | 11.31 ± 0.24 ms                    | 56.9             | 194.9             |
+| [YOLO11n](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt) | 640                 | 39.5                 | 56.1 ± 0.8                    | 1.5 ± 0.0                          | 2.6              | 6.5               |
+| [YOLO11s](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s.pt) | 640                 | 47.0                 | 90.0 ± 1.2                    | 2.5 ± 0.0                          | 9.4              | 21.5              |
+| [YOLO11m](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11m.pt) | 640                 | 51.5                 | 183.2 ± 2.0                   | 4.7 ± 0.1                          | 20.1             | 68.0              |
+| [YOLO11l](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11l.pt) | 640                 | 53.4                 | 238.6 ± 1.4                   | 6.2 ± 0.1                          | 25.3             | 86.9              |
+| [YOLO11x](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x.pt) | 640                 | 54.7                 | 462.8 ± 6.7                   | 11.3 ± 0.2                         | 56.9             | 194.9             |
 
 - **mAP<sup>val</sup>** 值针对单模型单尺度在 [COCO val2017](https://cocodataset.org/) 数据集上进行。 <br>复制命令 `yolo val detect data=coco.yaml device=0`
 - **速度**在使用 [Amazon EC2 P4d](https://aws.amazon.com/ec2/instance-types/p4/) 实例的 COCO 验证图像上平均。 <br>复制命令 `yolo val detect data=coco.yaml batch=1 device=0|cpu`
@@ -143,14 +143,31 @@ YOLO11 [检测](https://docs.ultralytics.com/tasks/detect/)、[分割](https://d
 
 | 模型                                                                                         | 尺寸<br><sup>(像素) | mAP<sup>box<br>50-95 | mAP<sup>mask<br>50-95 | 速度<br><sup>CPU ONNX<br>(ms) | 速度<br><sup>T4 TensorRT10<br>(ms) | 参数<br><sup>(M) | FLOPs<br><sup>(B) |
 | -------------------------------------------------------------------------------------------- | ------------------- | -------------------- | --------------------- | ----------------------------- | ---------------------------------- | ---------------- | ----------------- |
-| [YOLO11n-seg](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-seg.pt) | 640                 | 38.9                 | 32.0                  | 65.90 ± 1.14 ms               | 1.84 ± 0.00 ms                     | 2.9              | 10.4              |
-| [YOLO11s-seg](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s-seg.pt) | 640                 | 46.6                 | 37.8                  | 117.56 ± 4.89 ms              | 2.94 ± 0.01 ms                     | 10.1             | 35.5              |
-| [YOLO11m-seg](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11m-seg.pt) | 640                 | 51.5                 | 41.5                  | 281.63 ± 1.16 ms              | 6.31 ± 0.09 ms                     | 22.4             | 123.3             |
-| [YOLO11l-seg](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11l-seg.pt) | 640                 | 53.4                 | 42.9                  | 344.16 ± 3.17 ms              | 7.78 ± 0.16 ms                     | 27.6             | 142.2             |
-| [YOLO11x-seg](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x-seg.pt) | 640                 | 54.7                 | 43.8                  | 664.50 ± 3.24 ms              | 15.75 ± 0.67 ms                    | 62.1             | 319.0             |
+| [YOLO11n-seg](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-seg.pt) | 640                 | 38.9                 | 32.0                  | 65.9 ± 1.1                    | 1.8 ± 0.0                          | 2.9              | 10.4              |
+| [YOLO11s-seg](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s-seg.pt) | 640                 | 46.6                 | 37.8                  | 117.6 ± 4.9                   | 2.9 ± 0.0                          | 10.1             | 35.5              |
+| [YOLO11m-seg](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11m-seg.pt) | 640                 | 51.5                 | 41.5                  | 281.6 ± 1.2                   | 6.3 ± 0.1                          | 22.4             | 123.3             |
+| [YOLO11l-seg](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11l-seg.pt) | 640                 | 53.4                 | 42.9                  | 344.2 ± 3.2                   | 7.8 ± 0.2                          | 27.6             | 142.2             |
+| [YOLO11x-seg](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x-seg.pt) | 640                 | 54.7                 | 43.8                  | 664.5 ± 3.2                   | 15.8 ± 0.7                         | 62.1             | 319.0             |
 
 - **mAP<sup>val</sup>** 值针对单模型单尺度在 [COCO val2017](https://cocodataset.org/) 数据集上进行。 <br>复制命令 `yolo val segment data=coco-seg.yaml device=0`
 - **速度**在使用 [Amazon EC2 P4d](https://aws.amazon.com/ec2/instance-types/p4/) 实例的 COCO 验证图像上平均。 <br>复制命令 `yolo val segment data=coco-seg.yaml batch=1 device=0|cpu`
+
+</details>
+
+<details><summary>分类 (ImageNet)</summary>
+
+请参阅 [分类文档](https://docs.ultralytics.com/tasks/classify/) 以获取使用这些在 [ImageNet](https://docs.ultralytics.com/datasets/classify/imagenet/) 数据集上训练的模型的示例，其中包含 1000 个预训练类别。
+
+| 模型                                                                                         | 尺寸<br><sup>(像素) | acc<br><sup>top1 | acc<br><sup>top5 | 速度<br><sup>CPU ONNX<br>(ms) | 速度<br><sup>T4 TensorRT10<br>(ms) | 参数<br><sup>(M) | FLOPs<br><sup>(B) at 640 |
+| -------------------------------------------------------------------------------------------- | ------------------- | ---------------- | ---------------- | ----------------------------- | ---------------------------------- | ---------------- | ------------------------ |
+| [YOLO11n-cls](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-cls.pt) | 224                 | 70.0             | 89.4             | 5.0 ± 0.3                     | 1.1 ± 0.0                          | 1.6              | 3.3                      |
+| [YOLO11s-cls](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s-cls.pt) | 224                 | 75.4             | 92.7             | 7.9 ± 0.2                     | 1.3 ± 0.0                          | 5.5              | 12.1                     |
+| [YOLO11m-cls](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11m-cls.pt) | 224                 | 77.3             | 93.9             | 17.2 ± 0.4                    | 2.0 ± 0.0                          | 10.4             | 39.3                     |
+| [YOLO11l-cls](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11l-cls.pt) | 224                 | 78.3             | 94.3             | 23.2 ± 0.3                    | 2.8 ± 0.0                          | 12.9             | 49.4                     |
+| [YOLO11x-cls](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x-cls.pt) | 224                 | 79.5             | 94.9             | 41.4 ± 0.9                    | 3.8 ± 0.0                          | 28.4             | 110.4                    |
+
+- **acc** 值为在 [ImageNet](https://www.image-net.org/) 数据集验证集上的模型准确率。 <br>复制命令 `yolo val classify data=path/to/ImageNet device=0`
+- **速度**在使用 [Amazon EC2 P4d](https://aws.amazon.com/ec2/instance-types/p4/) 实例的 ImageNet 验证图像上平均。 <br>复制命令 `yolo val classify data=path/to/ImageNet batch=1 device=0|cpu`
 
 </details>
 
@@ -158,13 +175,13 @@ YOLO11 [检测](https://docs.ultralytics.com/tasks/detect/)、[分割](https://d
 
 请参阅 [姿态文档](https://docs.ultralytics.com/tasks/pose/) 以获取使用这些在 [COCO-Pose](https://docs.ultralytics.com/datasets/pose/coco/) 数据集上训练的模型的示例，其中包含 1 个预训练类别（人）。
 
-| 模型                                                                                           | 尺寸<br><sup>(像素) | mAP<sup>pose<br>50-95 | mAP<sup>pose<br>50 | 速度<br><sup>CPU ONNX<br>(ms) | 速度<br><sup>T4 TensorRT10<br>(ms) | 参数<br><sup>(M) | FLOPs<br><sup>(B) |
-| ---------------------------------------------------------------------------------------------- | ------------------- | --------------------- | ------------------ | ----------------------------- | ---------------------------------- | ---------------- | ----------------- |
-| [YOLO11n-pose](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-pose.pt) | 640                 | 50.0                  | 81.0               | 52.40 ± 0.51 ms               | 1.72 ± 0.01 ms                     | 2.9              | 7.6               |
-| [YOLO11s-pose](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s-pose.pt) | 640                 | 58.9                  | 86.3               | 90.54 ± 0.59 ms               | 2.57 ± 0.00 ms                     | 9.9              | 23.2              |
-| [YOLO11m-pose](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11m-pose.pt) | 640                 | 64.9                  | 89.4               | 187.28 ± 0.77 ms              | 4.94 ± 0.05 ms                     | 20.9             | 71.7              |
-| [YOLO11l-pose](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11l-pose.pt) | 640                 | 66.1                  | 89.9               | 247.69 ± 1.10 ms              | 6.42 ± 0.13 ms                     | 26.2             | 90.7              |
-| [YOLO11x-pose](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x-pose.pt) | 640                 | 69.5                  | 91.1               | 487.97 ± 13.91 ms             | 12.06 ± 0.20 ms                    | 58.8             | 203.3             |
+| 模型                                                                                         | 尺寸<br><sup>(像素) | mAP<sup>pose<br>50-95 | mAP<sup>pose<br>50 | 速度<br><sup>CPU ONNX<br>(ms) | 速度<br><sup>T4 TensorRT10<br>(ms) | 参数<br><sup>(M) | FLOPs<br><sup>(B) |
+| -------------------------------------------------------------------------------------------- | ------------------- | --------------------- | ------------------ | ----------------------------- | ---------------------------------- | ---------------- | ----------------- |
+| [YOLO11n-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-obb.pt) | 1024                | 78.4                  | 117.6 ± 0.8        | 4.4 ± 0.0                     | 2.7                                | 17.2             |
+| [YOLO11s-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s-obb.pt) | 1024                | 79.5                  | 219.4 ± 4.0        | 5.1 ± 0.0                     | 9.7                                | 57.5             |
+| [YOLO11m-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11m-obb.pt) | 1024                | 80.9                  | 562.8 ± 2.9        | 10.1 ± 0.4                    | 20.9                               | 183.5            |
+| [YOLO11l-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11l-obb.pt) | 1024                | 81.0                  | 712.5 ± 5.0        | 13.5 ± 0.6                    | 26.2                               | 232.0            |
+| [YOLO11x-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x-obb.pt) | 1024                | 81.3                  | 1408.6 ± 7.7       | 28.6 ± 1.0                    | 58.8                               | 520.2            |
 
 - **mAP<sup>val</sup>** 值针对单模型单尺度在 [COCO Keypoints val2017](https://cocodataset.org/) 数据集上进行。 <br>复制命令 `yolo val pose data=coco-pose.yaml device=0`
 - **速度**在使用 [Amazon EC2 P4d](https://aws.amazon.com/ec2/instance-types/p4/) 实例的 COCO 验证图像上平均。 <br>复制命令 `yolo val pose data=coco-pose.yaml batch=1 device=0|cpu`
@@ -177,31 +194,14 @@ YOLO11 [检测](https://docs.ultralytics.com/tasks/detect/)、[分割](https://d
 
 | 模型                                                                                         | 尺寸<br><sup>(像素) | mAP<sup>test<br>50 | 速度<br><sup>CPU ONNX<br>(ms) | 速度<br><sup>T4 TensorRT10<br>(ms) | 参数<br><sup>(M) | FLOPs<br><sup>(B) |
 | -------------------------------------------------------------------------------------------- | ------------------- | ------------------ | ----------------------------- | ---------------------------------- | ---------------- | ----------------- |
-| [YOLO11n-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-obb.pt) | 1024                | 78.4               | 117.56 ± 0.80 ms              | 4.43 ± 0.01 ms                     | 2.7              | 17.2              |
-| [YOLO11s-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s-obb.pt) | 1024                | 79.5               | 219.41 ± 4.00 ms              | 5.13 ± 0.02 ms                     | 9.7              | 57.5              |
-| [YOLO11m-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11m-obb.pt) | 1024                | 80.9               | 562.81 ± 2.87 ms              | 10.07 ± 0.38 ms                    | 20.9             | 183.5             |
-| [YOLO11l-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11l-obb.pt) | 1024                | 81.0               | 712.49 ± 4.98 ms              | 13.46 ± 0.55 ms                    | 26.2             | 232.0             |
-| [YOLO11x-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x-obb.pt) | 1024                | 81.3               | 1408.63 ± 7.67 ms             | 28.59 ± 0.96 ms                    | 58.8             | 520.2             |
+| [YOLO11n-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-obb.pt) | 1024                | 78.4               | 117.56 ± 0.80                 | 4.43 ± 0.01                        | 2.7              | 17.2              |
+| [YOLO11s-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s-obb.pt) | 1024                | 79.5               | 219.41 ± 4.00                 | 5.13 ± 0.02                        | 9.7              | 57.5              |
+| [YOLO11m-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11m-obb.pt) | 1024                | 80.9               | 562.81 ± 2.87                 | 10.07 ± 0.38                       | 20.9             | 183.5             |
+| [YOLO11l-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11l-obb.pt) | 1024                | 81.0               | 712.49 ± 4.98                 | 13.46 ± 0.55                       | 26.2             | 232.0             |
+| [YOLO11x-obb](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x-obb.pt) | 1024                | 81.3               | 1408.63 ± 7.67                | 28.59 ± 0.96                       | 58.8             | 520.2             |
 
 - **mAP<sup>test</sup>** 值针对单模型多尺度在 [DOTAv1](https://captain-whu.github.io/DOTA/index.html) 数据集上进行。 <br>复制命令 `yolo val obb data=DOTAv1.yaml device=0 split=test` 并提交合并结果到 [DOTA 评估](https://captain-whu.github.io/DOTA/evaluation.html)。
 - **速度**在使用 [Amazon EC2 P4d](https://aws.amazon.com/ec2/instance-types/p4/) 实例的 DOTAv1 验证图像上平均。 <br>复制命令 `yolo val obb data=DOTAv1.yaml batch=1 device=0|cpu`
-
-</details>
-
-<details><summary>分类 (ImageNet)</summary>
-
-请参阅 [分类文档](https://docs.ultralytics.com/tasks/classify/) 以获取使用这些在 [ImageNet](https://docs.ultralytics.com/datasets/classify/imagenet/) 数据集上训练的模型的示例，其中包含 1000 个预训练类别。
-
-| 模型                                                                                         | 尺寸<br><sup>(像素) | acc<br><sup>top1 | acc<br><sup>top5 | 速度<br><sup>CPU ONNX<br>(ms) | 速度<br><sup>T4 TensorRT10<br>(ms) | 参数<br><sup>(M) | FLOPs<br><sup>(B) at 640 |
-| -------------------------------------------------------------------------------------------- | ------------------- | ---------------- | ---------------- | ----------------------------- | ---------------------------------- | ---------------- | ------------------------ |
-| [YOLO11n-cls](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n-cls.pt) | 224                 | 70.0             | 89.4             | 5.03 ± 0.32 ms                | 1.10 ± 0.01 ms                     | 1.6              | 3.3                      |
-| [YOLO11s-cls](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s-cls.pt) | 224                 | 75.4             | 92.7             | 7.89 ± 0.18 ms                | 1.34 ± 0.01 ms                     | 5.5              | 12.1                     |
-| [YOLO11m-cls](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11m-cls.pt) | 224                 | 77.3             | 93.9             | 17.17 ± 0.40 ms               | 1.95 ± 0.00 ms                     | 10.4             | 39.3                     |
-| [YOLO11l-cls](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11l-cls.pt) | 224                 | 78.3             | 94.3             | 23.17 ± 0.29 ms               | 2.76 ± 0.00 ms                     | 12.9             | 49.4                     |
-| [YOLO11x-cls](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x-cls.pt) | 224                 | 79.5             | 94.9             | 41.41 ± 0.94 ms               | 3.82 ± 0.00 ms                     | 28.4             | 110.4                    |
-
-- **acc** 值为在 [ImageNet](https://www.image-net.org/) 数据集验证集上的模型准确率。 <br>复制命令 `yolo val classify data=path/to/ImageNet device=0`
-- **速度**在使用 [Amazon EC2 P4d](https://aws.amazon.com/ec2/instance-types/p4/) 实例的 ImageNet 验证图像上平均。 <br>复制命令 `yolo val classify data=path/to/ImageNet batch=1 device=0|cpu`
 
 </details>
 
@@ -210,7 +210,7 @@ YOLO11 [检测](https://docs.ultralytics.com/tasks/detect/)、[分割](https://d
 我们与领先的 AI 平台的关键集成扩展了 Ultralytics 产品的功能，增强了数据集标记、训练、可视化和模型管理等任务的能力。了解 Ultralytics 如何与 [Roboflow](https://roboflow.com/?ref=ultralytics)、ClearML、[Comet](https://bit.ly/yolov8-readme-comet)、Neural Magic 和 [OpenVINO](https://docs.ultralytics.com/integrations/openvino/) 合作，优化您的 AI 工作流程。
 
 <br>
-<a href="https://ultralytics.com/hub" target="_blank">
+<a href="https://www.ultralytics.com/hub" target="_blank">
 <img width="100%" src="https://github.com/ultralytics/assets/raw/main/yolov8/banner-integrations.png" alt="Ultralytics active learning integrations"></a>
 <br>
 <br>
@@ -237,7 +237,7 @@ YOLO11 [检测](https://docs.ultralytics.com/tasks/detect/)、[分割](https://d
 
 体验无缝 AI 使用 [Ultralytics HUB](https://www.ultralytics.com/hub) ⭐，一个集数据可视化、YOLO11 🚀 模型训练和部署于一体的解决方案，无需编写代码。利用我们最先进的平台和用户友好的 [Ultralytics 应用](https://www.ultralytics.com/app-install)，将图像转换为可操作见解，并轻松实现您的 AI 愿景。免费开始您的旅程！
 
-<a href="https://ultralytics.com/hub" target="_blank">
+<a href="https://www.ultralytics.com/hub" target="_blank">
 <img width="100%" src="https://github.com/ultralytics/assets/raw/main/im/ultralytics-hub.png" alt="Ultralytics HUB preview image"></a>
 
 ## <div align="center">贡献</div>
@@ -274,5 +274,5 @@ Ultralytics 提供两种许可选项以适应各种用例：
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
   <a href="https://ultralytics.com/bilibili"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-bilibili.png" width="3%" alt="Ultralytics BiliBili"></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="space">
-  <a href="https://ultralytics.com/discord"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-discord.png" width="3%" alt="Ultralytics Discord"></a>
+  <a href="https://discord.com/invite/ultralytics"><img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-discord.png" width="3%" alt="Ultralytics Discord"></a>
 </div>
