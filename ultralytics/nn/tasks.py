@@ -40,6 +40,7 @@ from ultralytics.nn.modules import (
     Concat,
     Conv,
     Conv2,
+    Conv2,
     ConvTranspose,
     Detect,
     DWConv,
@@ -291,6 +292,8 @@ class BaseModel(nn.Module):
         if getattr(self, "criterion", None) is None:
             self.criterion = self.init_criterion()
 
+        # import ipdb;ipdb.set_trace()
+        batch['img'] = batch['img'][:, :1, :, :]
         preds = self.forward(batch["img"]) if preds is None else preds
         return self.criterion(preds, batch)
 
