@@ -1,7 +1,7 @@
 path: /mnt/workspace/yolo/ultralytics/datasets/LROC
-train: images
-val: images
-test:
+train: train.txt
+val: val.txt
+test: test.txt
 
 # Classes
 names:
