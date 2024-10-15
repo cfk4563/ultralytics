@@ -1,9 +1,0 @@
-path: D:\cfk\yolo\ultralytics\datasets\crater
-train: images
-val: images
-test:
-
-# Classes
-names:
-  0: crater
-
