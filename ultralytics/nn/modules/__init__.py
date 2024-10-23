@@ -91,7 +91,9 @@ from .conv import (
     RepConv,
     SpatialAttention,
     CoordAtt,
-    AKConv
+    AKConv,
+    DualConv,
+    CARAFE
 )
 from .head import OBB, Classify, Detect, Pose, RTDETRDecoder, Segment, WorldDetect, v10Detect
 from .transformer import (
