@@ -58,7 +58,8 @@ from .block import (
     SCDown,
     GatherExcite,
     SEAttention,
-    DualConv
+    DualConv,
+    CARAFE
 )
 from .conv import (
     CBAM,
@@ -162,5 +163,6 @@ __all__ = (
     "SCDown",
     "GatherExcite",
     "SEAttention",
-    "DualConv"
+    "DualConv",
+    "CARAFE"
 )
