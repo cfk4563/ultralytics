@@ -65,7 +65,10 @@ from ultralytics.nn.modules import (
     GatherExcite,
     SEAttention,
     DualConv,
-    CARAFE
+    CARAFE,
+    LSKA,
+    SCAM,
+    DySample,
 )
 from ultralytics.utils import DEFAULT_CFG_DICT, DEFAULT_CFG_KEYS, LOGGER, colorstr, emojis, yaml_load
 from ultralytics.utils.checks import check_requirements, check_suffix, check_yaml
@@ -1009,7 +1012,6 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             GatherExcite,
             SEAttention,
             DualConv,
-            CARAFE,
         }:
             c1, c2 = ch[f], args[0]
             if c2 != nc:  # if c2 not equal to number of classes (i.e. for Classify() output)
@@ -1051,6 +1053,18 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
                 n = 1
         elif m is ResNetLayer:
             c2 = args[1] if args[3] else args[1] * 4
+        # -----------start---------
+        elif m is DySample:
+            c2 = ch[f]
+            args = [c2, *args]
+        elif m is SCAM:
+            c2 = ch[f]
+            args = [c2]
+        # -----------end------------    
+        # ------LSKAttention----------
+        elif m in {LSKA}:
+            args = [ch[f], *args]
+        # -------------end------------
         # -------轻量级上采样算子CARAFE---------
         elif m is CARAFE:
             c1, c2 = ch[f], args[0]

@@ -59,7 +59,10 @@ from .block import (
     GatherExcite,
     SEAttention,
     DualConv,
-    CARAFE
+    CARAFE,
+    LSKA,
+    SCAM,
+    DySample,
 )
 from .conv import (
     CBAM,
@@ -164,5 +167,6 @@ __all__ = (
     "GatherExcite",
     "SEAttention",
     "DualConv",
-    "CARAFE"
+    "CARAFE",
+    "LSKA"
 )
