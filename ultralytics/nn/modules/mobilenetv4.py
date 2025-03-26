@@ -370,7 +370,7 @@ class MobileNetV4(nn.Module):
 
         self.selected_layer = self.layers[i]
 
-        self.channel = self.get_output_channels(torch.randn(1, 1, 640, 640),i)
+        # self.channel = self.get_output_channels(torch.randn(1, 1, 640, 640),i)
 
     def forward(self, x):
         # Forward pass through the selected layer
@@ -378,12 +378,12 @@ class MobileNetV4(nn.Module):
             x = f(x)
         return x
 
-    def get_output_channels(self, x, i):
-        # Pass a dummy tensor through the network to determine output channels
-        for idx in range(i + 1):  # Need to include the selected layer
-            for f in self.layers[idx]:
-                x = f(x)
-        return x.size(1)
+    # def get_output_channels(self, x, i):
+    #     # Pass a dummy tensor through the network to determine output channels
+    #     for idx in range(i + 1):  # Need to include the selected layer
+    #         for f in self.layers[idx]:
+    #             x = f(x)
+    #     return x.size(1)
 
 def MobileNetV4ConvSmall(i):
     model = MobileNetV4('MobileNetV4ConvSmall',i)
